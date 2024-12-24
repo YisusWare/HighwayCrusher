@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f4f5222cda68941a5e3c090652d328, type: 3}
+  m_Name: 13CalacaMovil
+  m_EditorClassIdentifier: 
+  Id: 13
+  carName: Calaca Movil
+  carDescription: Calaca movil
+  prefab: {fileID: 2155912722365296562, guid: 5aac816b67b3dab4bb613bdb8e0743cc, type: 3}
+  sprite: {fileID: 3529211, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
+  price: 275
+  unlocked: 0

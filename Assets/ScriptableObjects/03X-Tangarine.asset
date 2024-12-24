@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f4f5222cda68941a5e3c090652d328, type: 3}
+  m_Name: 03X-Tangarine
+  m_EditorClassIdentifier: 
+  Id: 3
+  carName: X-Tangarine
+  carDescription: naranja poderosa
+  prefab: {fileID: 3320257174777825860, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
+  sprite: {fileID: 769946946, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
+  price: 370
+  unlocked: 0

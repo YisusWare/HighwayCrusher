@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f4f5222cda68941a5e3c090652d328, type: 3}
+  m_Name: 12AtaudConLlantas
+  m_EditorClassIdentifier: 
+  Id: 12
+  carName: Ataud con llantas
+  carDescription: "El coche que mi mam\xE1 piensa que me voy a comprar"
+  prefab: {fileID: 2396332537502886016, guid: f28b1f460ec859b46a6358f2ea522981, type: 3}
+  sprite: {fileID: 860440700, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
+  price: 300
+  unlocked: 0

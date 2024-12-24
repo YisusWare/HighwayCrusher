@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &672582829930068953
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 445453562040050794, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: power
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 445453562040050794, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: MaxHealthPoints
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077893821431057588, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_Size.x
+      value: 1.236974
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077893821431057588, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_Size.y
+      value: 0.2794915
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077893821431057588, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.01177907
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077893821431057588, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.1387275
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077893821431057588, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077893821431057588, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 1226626524842116780, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -606452144, guid: 772069d84f29c134c8523d9223cae4bb, type: 3}
+    - target: {fileID: 1226626524842116780, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1226626524842116780, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1226626524842116780, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1226626524842116780, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -2039856741
+      objectReference: {fileID: 0}
+    - target: {fileID: 5557353626961631469, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_Name
+      value: Iglu Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841123235488066421, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.0950115
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841123235488066421, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.039387584
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841123235488066421, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841123235488066421, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841123235488066421, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841123235488066421, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841123235488066421, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841123235488066421, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841123235488066421, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841123235488066421, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269210502708761576, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_Size.x
+      value: 1.1882964
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269210502708761576, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_Size.y
+      value: 0.3670356
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269210502708761576, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.016286433
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269210502708761576, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.105982795
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269210502708761576, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269210502708761576, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.65
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 27e358d58f1e1df4ba44064209efeb71, type: 3}
