@@ -19,17 +19,30 @@ public class PowerUpsStorage : MonoBehaviour
 
         var savedPowerUps = GameManager.instance.GetSavedPowerUps();
 
+        var boughtItems = GameManager.instance.GetBoughtItems();
+
         player.OnGetPowerUp += AddPowerUpToList;
         buttons = new List<GameObject>();
         powerUps = new List<PowerUpContainer>();
 
-        if (savedPowerUps.Count > 0)
+        if(boughtItems.Count > 0)
         {
-            foreach(var powerUp in savedPowerUps)
+            foreach (var powerUp in boughtItems)
             {
                 AddPowerUpToList(powerUp);
             }
         }
+        else
+        {
+            if (savedPowerUps.Count > 0)
+            {
+                foreach (var powerUp in savedPowerUps)
+                {
+                    AddPowerUpToList(powerUp);
+                }
+            }
+        }
+        
         
     }
 

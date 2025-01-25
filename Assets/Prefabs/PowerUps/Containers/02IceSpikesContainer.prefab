@@ -186,6 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 707691772, guid: e61a63a8f1e567e45b41e3e4ed8e67ef, type: 3}
   prefab: {fileID: 3583573124788144002, guid: 3967140101b2f3b40adc95933a9fe677, type: 3}
+  price: 30
   index: 2
 --- !u!58 &2994717942284447909
 CircleCollider2D:

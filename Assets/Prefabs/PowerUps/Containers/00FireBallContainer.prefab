@@ -221,6 +221,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 539469793, guid: e5a6ef8195fbe044db264f9d5a40fc6d, type: 3}
   prefab: {fileID: 1435386065376374741, guid: f50eddc7366e6c547841a08c50855929, type: 3}
+  price: 35
+  index: 0
 --- !u!114 &7186215083713326911
 MonoBehaviour:
   m_ObjectHideFlags: 0

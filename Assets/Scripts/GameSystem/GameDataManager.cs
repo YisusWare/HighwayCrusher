@@ -79,11 +79,7 @@ public class GameDataManager : MonoBehaviour
                 carName = c.carName,
                 unlocked = c.Id <= savedCars - 1 ? gameData.CarsRegistry[c.Id].unlocked : c.unlocked
             }).ToArray();
-            foreach (var car in gameData.CarsRegistry)
-            {
-                Debug.Log(car.carName);
-                Debug.Log(car.unlocked);
-            }
+
         }
         else
         {

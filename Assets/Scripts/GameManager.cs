@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
 
     public SavedGame savedGame;
 
+    private List<int> boughtItems = new List<int>();
+
 
     public enum GameState
     {
@@ -118,21 +120,8 @@ public class GameManager : MonoBehaviour
         currentState = GameState.gameOverScreen;
         isPlayerDead = true;
         PlayerController player = GameObject.FindObjectOfType<PlayerController>();
-        Destroy(player.gameObject);
-
-        //RoadModule[] roadModules = GameObject.FindObjectsOfType<RoadModule>();
-
-        //foreach(var module in roadModules)
-        //{
-        //    module.speed = 0f;
-        //}
-
-        //Car[] cars = GameObject.FindObjectsOfType<Car>();
-
-        //foreach (var car in cars)
-        //{
-        //    car.speed = 0f;
-        //}
+        //Destroy(player.gameObject);
+        player.gameObject.SetActive(false);
 
         dataManager.LoadData();
         int highScore = dataManager.getHighScore();
@@ -170,6 +159,7 @@ public class GameManager : MonoBehaviour
         currentState = GameState.gameScreen;
         metersRun = 0;
         collectedCoins = 0;
+        boughtItems = new List<int>();
     }
 
 
@@ -190,6 +180,7 @@ public class GameManager : MonoBehaviour
         savedGame.SceneIndex = 1;
         savedGame.powerUpIndex = new int[0];
         savedGame.metersRun = 0;
+        boughtItems = new List<int>();
         dataManager.DeleteSavedGameData();
     }
     public void StartSavedGame()
@@ -197,6 +188,7 @@ public class GameManager : MonoBehaviour
         savedGame = dataManager.GetSavedGame();
         metersRun = savedGame.metersRun;
         selectedCar = dataManager.playableCars[savedGame.carIndex];
+        boughtItems = new List<int>();
 
     }
 
@@ -208,6 +200,24 @@ public class GameManager : MonoBehaviour
     public string GetDataFileText()
     {
         return dataManager.GetDataFileText();
+    }
+
+    public void SetBoughtItems(List<int> _boughtItems)
+    {
+        boughtItems = _boughtItems;
+    }
+
+    public List<PowerUpContainer> GetBoughtItems()
+    {
+        List<PowerUpContainer> powerups = new List<PowerUpContainer>();
+
+        var powerUpsGlobalList = dataManager.powerUpsGlobalList;
+        foreach (var powerUpIndex in boughtItems)
+        {
+            powerups.Add(powerUpsGlobalList[powerUpIndex]);
+        }
+
+        return powerups;
     }
 
     public event EventHandler OnLoadCarsData;

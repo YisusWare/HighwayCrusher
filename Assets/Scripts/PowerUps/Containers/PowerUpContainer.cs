@@ -8,6 +8,8 @@ public class PowerUpContainer: MonoBehaviour
     public Sprite sprite;
     [SerializeField]
     public GameObject prefab;
+    [SerializeField]
+    public int price;
     public int index;
  
     public virtual void Activate(PowerUpsStorage storage, GameObject button)
