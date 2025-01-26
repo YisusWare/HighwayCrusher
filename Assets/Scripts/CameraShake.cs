@@ -21,8 +21,10 @@ public class CameraShake : MonoBehaviour
             yield return null;
         }
 
+
         Debug.Log("Finished shaking");
         transform.localPosition = originalPosition;
         
+
     }
 }
