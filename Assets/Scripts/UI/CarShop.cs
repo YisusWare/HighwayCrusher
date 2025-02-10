@@ -30,6 +30,10 @@ public class CarShop : MonoBehaviour
     Slider powerSlider;
     [SerializeField]
     Image selectedCarImage;
+    [SerializeField]
+    Sprite CarCursorImage;
+
+    GameObject itemCursor;
     
     private void Start()
     {
@@ -43,7 +47,15 @@ public class CarShop : MonoBehaviour
         GameManager.instance.dataManager.LoadData();
         var carSprites = GameManager.instance.dataManager.playableCars;
         currentCoins = GameManager.instance.dataManager.getTotalCoins();
-        currentCoinsText.text = "Your cash: $" + currentCoins; 
+        currentCoinsText.text = "Your cash: $" + currentCoins;
+
+        itemCursor = new GameObject("ItemCursor");
+        RectTransform cursorTransform = itemCursor.AddComponent<RectTransform>();
+        cursorTransform.sizeDelta = new Vector2(350, 630);
+        Image CursorImage = itemCursor.AddComponent<Image>();
+
+        CursorImage.sprite = CarCursorImage;
+
         foreach (var car in carSprites)
         {
             GameObject newButton = new GameObject("" + car.Id);
@@ -65,7 +77,7 @@ public class CarShop : MonoBehaviour
             buttonComponent.interactable = !car.unlocked;
 
             newButton.transform.SetParent(carsContainer.transform, false);
-            buttonComponent.onClick.AddListener(() => SetSelectedCar(car));
+            buttonComponent.onClick.AddListener(() => SetSelectedCar(car,newButton));
             AvailableCarsButtons.Add(buttonComponent);
         }
 
@@ -88,10 +100,13 @@ public class CarShop : MonoBehaviour
         ShopPanel.transform.LeanScale(Vector2.zero, 0.3f).setEaseInBack();
     }
 
-    private void SetSelectedCar(PlayableCarModel car)
+    private void SetSelectedCar(PlayableCarModel car,GameObject button)
     {
+        itemCursor.SetActive(true);
+        itemCursor.transform.SetParent(button.transform,false);
+        itemCursor.transform.position = button.transform.position;
         selectedCar = car;
-        //To do: set the UI
+        
         selectedCarName.text = selectedCar.carName;
         selectedCarPrice.text = "$" + selectedCar.price;
         
@@ -111,6 +126,8 @@ public class CarShop : MonoBehaviour
 
     public void BuyCar()
     {
+
+        itemCursor.SetActive(false);
         GameManager.instance.dataManager.setTotalCoins(currentCoins - selectedCar.price);
 
         GameManager.instance.dataManager.LoadData();

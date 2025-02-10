@@ -21,6 +21,7 @@ public class Car : MonoBehaviour
         }
         
 
+
         if (transform.position.y <= -10)
         {
             Destroy(this.gameObject);

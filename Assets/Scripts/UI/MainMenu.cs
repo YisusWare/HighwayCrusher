@@ -36,6 +36,10 @@ public class MainMenu : MonoBehaviour
     [SerializeField] TextMeshProUGUI itemPrice;
     [SerializeField] TextMeshProUGUI currentCoinsText;
     [SerializeField] GameObject bougthItemsContainer;
+    [SerializeField] Sprite menuCursorImage;
+    [SerializeField] ScrollRect itemsScroll;
+
+    GameObject itemCursor;
 
 
     private List<GameObject> itemButtons = new List<GameObject>();
@@ -53,22 +57,30 @@ public class MainMenu : MonoBehaviour
     private List<PowerUpContainer> availableItems = new List<PowerUpContainer>();
     private void Start()
     {
+        
         PreGamePanel.transform.localScale = Vector2.zero;
         ResumeGamePanel.transform.localScale = Vector2.zero;
-        SelectCar(0);
+        
 
         buyButton.interactable = false;
         LoadItemButtons();
     }
 
+    
     private void InitializeUnlockedCarsSelection()
     {
 
-        
+        GameObject itemCursor = new GameObject("ItemCursor");
+        RectTransform cursorTransform = itemCursor.AddComponent<RectTransform>();
+        cursorTransform.sizeDelta = new Vector2(350, 630);
+        Image CursorImage = itemCursor.AddComponent<Image>();
+
+        CursorImage.sprite = menuCursorImage;
+
         GameManager.instance.dataManager.LoadData();
         var carSprites = GameManager.instance.dataManager.playableCars;
-        
 
+        bool flag = false;
         PlayableCarRegistry[] UnlockedCars = GameManager.instance.dataManager.GetUnlockedCars();
 
         foreach (var car in UnlockedCars)
@@ -92,13 +104,30 @@ public class MainMenu : MonoBehaviour
             availableCarsButtons.Add(buttonComponent);
             newButton.transform.SetParent(UnlockedCarsSelector.transform, false);
             int capturedIndex = car.CarId;
-            buttonComponent.onClick.AddListener(() => SelectCar(capturedIndex));
+            buttonComponent.onClick.AddListener(() => SelectCar(capturedIndex,newButton,itemCursor));
+
+            if(!flag)
+            {
+                itemCursor.transform.SetParent(newButton.transform,false);
+                itemCursor.transform.localPosition = newButton.transform.localPosition;
+                flag = true;
+
+                GameManager.instance.selectedCar = GameManager.instance.dataManager.playableCars[0];
+                PlayerController carController = GameManager.instance.selectedCar.prefab.GetComponent<PlayerController>();
+                selectedCarImage.sprite = GameManager.instance.selectedCar.sprite;
+                selectedCarImage.gameObject.SetActive(true);
+                speedSlider.value = carController.speed;
+                accelerationSlider.value = carController.Acceleration;
+                maxHealthSlider.value = carController.maxHealth;
+                powerSlider.value = carController.Power;
+                selectedCarNameText.text = GameManager.instance.selectedCar.carName;
+            }
         }
             
         
     }
 
-    public void SelectCar(int id)
+    public void SelectCar(int id,GameObject newButton, GameObject itemCursor)
     {
         
         GameManager.instance.selectedCar = GameManager.instance.dataManager.playableCars[id];
@@ -111,7 +140,8 @@ public class MainMenu : MonoBehaviour
         powerSlider.value = carController.Power;
         selectedCarNameText.text = GameManager.instance.selectedCar.carName;
 
-
+        itemCursor.transform.SetParent(newButton.transform,false);
+        itemCursor.transform.position = newButton.transform.position;
     }
 
     public void OpenSelectionPanel()
@@ -169,6 +199,7 @@ public class MainMenu : MonoBehaviour
     public void LoadItemButtons()
     {
 
+       
         currentCoins = GameManager.instance.dataManager.getTotalCoins();
 
         currentCoinsText.text = "$ " + currentCoins;
@@ -176,8 +207,15 @@ public class MainMenu : MonoBehaviour
 
         PowerUpContainer[] powerUps = GameManager.instance.dataManager.powerUpsGlobalList;
 
+        itemCursor = new GameObject("ItemCursor");
+        RectTransform cursorTransform = itemCursor.AddComponent<RectTransform>();
+        cursorTransform.sizeDelta = new Vector2(350, 350);
+        Image CursorImage = itemCursor.AddComponent<Image>();
+
+        CursorImage.sprite = menuCursorImage;
         for (int i = 0; i < ItemsAmmount; i++)
         {
+
 
             int positionIndex = i;
             int randomIndex = Random.Range(0, powerUps.Length);
@@ -213,18 +251,35 @@ public class MainMenu : MonoBehaviour
             color.disabledColor = new Color(1, 1, 1, 0.5f);
             
 
-            buttonComponent.onClick.AddListener(() => SelectItem(positionIndex, newButton));
-
+            buttonComponent.onClick.AddListener(() => SelectItem(positionIndex, newButton,itemCursor));
+            
             newButton.transform.SetParent(ShopContainer.transform, false);
             itemIcon.transform.SetParent(newButton.transform, false);
+            if (positionIndex == 0)
+            {
+                Debug.Log("cursor set");
+                itemCursor.transform.SetParent(newButton.transform, false);
+                itemCursor.transform.localPosition = newButton.transform.localPosition;
 
+                buyButton.interactable = true;
+
+                PowerUpContainer selectedItem = availableItems[positionIndex];
+
+                itemPrice.text = "$" + selectedItem.price;
+
+                selectedItemIndex = positionIndex;
+                selectedItemButtonSibilingIndex = newButton.transform.GetSiblingIndex();
+
+            }
             itemButtons.Add(newButton);
-
+            
 
         }
+
+       
     }
 
-    public void SelectItem(int itemIndex,GameObject button)
+    public void SelectItem(int itemIndex,GameObject button,GameObject itemCursor)
     {
 
         buyButton.interactable = true;
@@ -235,10 +290,15 @@ public class MainMenu : MonoBehaviour
 
         selectedItemIndex = itemIndex;
         selectedItemButtonSibilingIndex = button.transform.GetSiblingIndex();
+
+        itemCursor.transform.SetParent(button.transform);
+        itemCursor.transform.position = button.transform.position;
     }
 
     public void BuyItem()
     {
+
+
         PowerUpContainer selectedItem = availableItems[selectedItemIndex];
 
         int coinsAux = GameManager.instance.dataManager.getTotalCoins() - selectedItem.price;
@@ -253,10 +313,12 @@ public class MainMenu : MonoBehaviour
         //actually save item
         bougthItems.Add(selectedItem.index);
 
+        itemCursor.transform.SetParent(null);
         //destroy the item button
         Destroy(itemButtons[selectedItemButtonSibilingIndex]);
         itemButtons.RemoveAt(selectedItemButtonSibilingIndex);
 
+        SelectItem(0,itemButtons[0],itemCursor);
         //bougthItemsContainer
         GameObject bougthItemIconContainer = new GameObject("boughtItem");
 
@@ -300,4 +362,11 @@ public class MainMenu : MonoBehaviour
             Destroy(child.gameObject);
         }
     }
+
+    public void DisplayRewardedAdd()
+    {
+        AdsManager.instance.rewardedAds.ShowRewardedAd();    
+    }
+
+
 }

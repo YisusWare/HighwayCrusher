@@ -137,6 +137,7 @@ public class GameManager : MonoBehaviour
         dataManager.setTotalCoins(totalCollectedCoins);
         dataManager.SaveData();
 
+        AdsManager.instance.interstitialAds.ShowIntertitalAd();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
