@@ -49,6 +49,9 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
         if(placementId == androidAdId && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
         {
             Debug.Log("Ads fully watched");
+
+            GameManager.instance.IsAdReward = true;
+            GameManager.instance.ContinueGameWithCoins();
         }
     }
 }

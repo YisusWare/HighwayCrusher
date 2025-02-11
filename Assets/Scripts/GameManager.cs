@@ -18,6 +18,10 @@ public class GameManager : MonoBehaviour
 
     private List<int> boughtItems = new List<int>();
 
+    PlayerController player;
+
+    [HideInInspector]
+    public bool IsAdReward;
 
     public enum GameState
     {
@@ -52,6 +56,8 @@ public class GameManager : MonoBehaviour
     {
         
         savedGame = new SavedGame();
+
+
     }
     // Update is called once per frame
     void Update()
@@ -119,8 +125,7 @@ public class GameManager : MonoBehaviour
     {
         currentState = GameState.gameOverScreen;
         isPlayerDead = true;
-        PlayerController player = GameObject.FindObjectOfType<PlayerController>();
-        //Destroy(player.gameObject);
+        
         player.gameObject.SetActive(false);
 
         dataManager.LoadData();
@@ -137,16 +142,51 @@ public class GameManager : MonoBehaviour
         dataManager.setTotalCoins(totalCollectedCoins);
         dataManager.SaveData();
 
-        AdsManager.instance.interstitialAds.ShowIntertitalAd();
+        if(metersRun > 1000)
+        {
+            AdsManager.instance.interstitialAds.ShowIntertitalAd();
+        }
+        
     }
+
+    public void ContinueGameWithCoins()
+    {
+        collectedCoins = 0;
+
+        if (!IsAdReward)
+        {
+            totalCollectedCoins -= 30;
+            dataManager.setTotalCoins(totalCollectedCoins);
+            dataManager.SaveData();
+        }
+        
+
+        player.gameObject.SetActive(true);
+        player.SetInvincibleTimer(3f);
+        player.RestartHealth();
+
+        
+
+        isPlayerDead = false;
+
+        currentState = GameState.gameScreen;
+        Color spriteColor = new Color(255, 255, 255, 255);
+        player.gameObject.GetComponent<SpriteRenderer>().color = spriteColor;
+
+        IsAdReward = false;
+        
+    }
+
+
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         
-        var player = FindObjectOfType<PlayerController>();
+        player = FindObjectOfType<PlayerController>();
         if(scene.buildIndex != 0 && player == null)
         {
             Instantiate(selectedCar.prefab, new Vector2(0, 0), Quaternion.identity);
+            player = FindObjectOfType<PlayerController>();
         }
         
     }

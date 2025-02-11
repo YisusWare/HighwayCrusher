@@ -84,10 +84,7 @@ public class RoadManager : MonoBehaviour
             }
         }
 
-        if (GameManager.instance.isPlayerDead)
-        {
-            StopAllCoroutines();
-        }
+        
     }
 
     IEnumerator InstanceEnemy()

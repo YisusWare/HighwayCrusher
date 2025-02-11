@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float Acceleration;
     [SerializeField] public int Power;
 
+    private float invincibleTimer = 0;
+
     SpriteRenderer sprite;
     float screenLeftEdge;
     float screenRigthEdge;
@@ -52,26 +54,60 @@ public class PlayerController : MonoBehaviour
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, screenLeftEdge + (playerHeigth / 4), screenRigthEdge - (playerHeigth / 4)),
                                         Mathf.Clamp(transform.position.y, screenBottomEdge + (playerHeigth / 2), screenTopEdge - (playerHeigth / 2)),
                                         transform.position.z);
+
+        if(invincibleTimer < 0)
+        {
+            animator.SetBool("Invincible", false);
+        }
+       
     }
+
+    private void FixedUpdate()
+    {
+        invincibleTimer -= Time.deltaTime;
+    }
+
+    public void SetInvincibleTimer(float timer)
+    {
+        invincibleTimer = timer;
+        animator.SetBool("Invincible", true);
+    }
+
+    
 
     public void takeDamage(int damage)
     {
-        
-        health = Mathf.Clamp(health -damage,0,maxHealth);
-        animator.SetTrigger("Damage");
-        OnTakeDamage?.Invoke(health);
-        if (health <= 0)
+        if(invincibleTimer < 0)
         {
-            GameManager.instance.GameOver();
-            OnDie?.Invoke(this, EventArgs.Empty);
+            health = Mathf.Clamp(health - damage, 0, maxHealth);
 
+            OnTakeDamage?.Invoke(health);
+            if (health <= 0)
+            {
+                GameManager.instance.GameOver();
+                OnDie?.Invoke(this, EventArgs.Empty);
+
+            }
+            else
+            {
+                animator.SetTrigger("Damage");
+            }
         }
         
+        
     }
+
+
 
     public void GetPowerUp(PowerUpContainer powerUp) 
     {
         OnGetPowerUp?.Invoke(powerUp);
+    }
+
+    public void RestartHealth()
+    {
+        health = maxHealth;
+        OnTakeDamage?.Invoke(health);
     }
 
     public event EventHandler OnDie;

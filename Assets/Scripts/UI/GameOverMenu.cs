@@ -17,6 +17,7 @@ public class GameOverMenu : MonoBehaviour
 
     private void Start()
     {
+        gameOverPanel.transform.localScale = Vector2.zero;
         var player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         player.OnDie += SetActive;
     }
@@ -32,9 +33,21 @@ public class GameOverMenu : MonoBehaviour
         GameManager.instance.mainMenu();
     }
 
+    public void ContinueWithCoins()
+    {
+        gameOverPanel.transform.LeanScale(Vector2.zero, 0.3f);
+        GameManager.instance.ContinueGameWithCoins();
+    }
+
+    public void ContinueWithAd()
+    {
+        gameOverPanel.transform.LeanScale(Vector2.zero, 0.3f);
+        AdsManager.instance.rewardedAds.ShowRewardedAd();
+    }
+
     private void SetActive(object sender, EventArgs e)
     {
-        gameOverPanel.SetActive(true);
+        gameOverPanel.transform.LeanScale(Vector2.one, 0.3f);
         highScoreText.text = GameManager.instance.dataManager.getHighScore() + "m";
         collectedCoinsText.text = string.Concat("Collected Coins: ",GameManager.instance.collectedCoins);
         totalCoinsText.text = string.Concat("Collected Coins: ",GameManager.instance.totalCollectedCoins);
