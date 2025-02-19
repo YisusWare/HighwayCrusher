@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class RoadManager : MonoBehaviour
 {
-    [SerializeField]
-    GameObject[] roadModules;
+  
     [SerializeField]
     GameObject currentModule;
     GameObject nextModule;

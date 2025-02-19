@@ -24,8 +24,12 @@ public class ClaxonConcrete : MonoBehaviour
         
         foreach (Collider2D collider in enemyColliders)
         {
+            BreakableObject breakableObject = collider.gameObject.GetComponent<BreakableObject>();
+            if (breakableObject != null)
+            {
+                breakableObject.TakeDamage(power);
+            }
             
-            collider.gameObject.GetComponent<Obstacle>().TakeDamage(power);
         }
     }
 

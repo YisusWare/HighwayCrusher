@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 919363580539805125}
   - component: {fileID: 5852665138969178613}
   - component: {fileID: 8695484707191276576}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FerrariEnzo
   m_TagString: Player
   m_Icon: {fileID: 0}

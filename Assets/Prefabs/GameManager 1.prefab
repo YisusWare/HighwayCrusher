@@ -70,6 +70,7 @@ MonoBehaviour:
   - {fileID: 6658123949544299023, guid: 1e703fcd33576814ebefee2ed63fc29e, type: 3}
   - {fileID: 326518088906147981, guid: 14a826be61c9ab643b8e3ab24c96d4e1, type: 3}
   - {fileID: 1415646169314864578, guid: e4edc333ff4f962438c7c94e7d1acea9, type: 3}
+  - {fileID: 6770902735509848852, guid: 1e6ba0f6e25c0ee43954351bd1d16616, type: 3}
 --- !u!1 &7373059830458932905
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,6 +119,7 @@ MonoBehaviour:
   isPlayerDead: 0
   selectedCar: {fileID: 11400000, guid: 4f82b318035519f42bf8b7089293be2f, type: 2}
   dataManager: {fileID: 6611178204889151273}
+  IsAdReward: 0
   metersRun: 0
   collectedCoins: 0
   totalCollectedCoins: 0

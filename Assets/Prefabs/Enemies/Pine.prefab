@@ -74,12 +74,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2109410546494318594, guid: 7b1968141a124aa4b8da47d53585bda9, type: 3}
       propertyPath: m_Name
-      value: Tree Variant 1
+      value: Pine
       objectReference: {fileID: 0}
     - target: {fileID: 4709731986897253955, guid: 7b1968141a124aa4b8da47d53585bda9, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1347352346, guid: 772069d84f29c134c8523d9223cae4bb, type: 3}
+    - target: {fileID: 4709731986897253955, guid: 7b1968141a124aa4b8da47d53585bda9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6230483506876847237, guid: 7b1968141a124aa4b8da47d53585bda9, type: 3}
       propertyPath: power
       value: 5

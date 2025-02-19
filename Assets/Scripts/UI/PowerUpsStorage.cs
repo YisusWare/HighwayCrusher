@@ -65,12 +65,14 @@ public class PowerUpsStorage : MonoBehaviour
         //create the icon of the item
         GameObject itemIcon = new GameObject("ItemIcon_" + (buttons.Count + 1));
 
+        RectTransform iconTransform = itemIcon.AddComponent<RectTransform>();
+        iconTransform.sizeDelta = new Vector2(150, 150);
         Image itemIconSprite = itemIcon.AddComponent<Image>();
         itemIconSprite.sprite = powerUp.sprite;
 
         RectTransform rectTransform = newButton.AddComponent<RectTransform>();
 
-        rectTransform.sizeDelta = new Vector2(160, 300);
+        rectTransform.sizeDelta = new Vector2(180, 330);
 
         Image buttonImage = newButton.AddComponent<Image>();
         buttonImage.sprite = ItemButtonSprite;

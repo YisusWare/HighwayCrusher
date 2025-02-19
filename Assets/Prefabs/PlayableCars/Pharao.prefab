@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7315224775764494125}
   - component: {fileID: 5481057248862008056}
   - component: {fileID: 8109445907189340296}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pharao
   m_TagString: Player
   m_Icon: {fileID: 0}

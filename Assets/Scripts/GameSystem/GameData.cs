@@ -12,6 +12,8 @@ public class GameData
     public int[] powerUpIndex;
     public int metersRun;
     public int carIndex;
+    public float musicVolume;
+    public float sfxVolume;
     public PlayableCarRegistry[] CarsRegistry;
     
 

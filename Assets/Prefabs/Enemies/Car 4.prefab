@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fa91e23d6feab42933fb3abfab6169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -3
+  speed: 0
 --- !u!70 &8142439804270468697
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -149,8 +149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155d8d9bdaa80f44bb563eabfc822996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  HealthPoints: 0
   MaxHealthPoints: 5
+  damage: 5
   power: 2
 --- !u!50 &3911621317560331031
 Rigidbody2D:

@@ -77,7 +77,8 @@ public class GameDataManager : MonoBehaviour
                 CarId = c.Id,
                 price = c.price,
                 carName = c.carName,
-                unlocked = c.Id <= savedCars - 1 ? gameData.CarsRegistry[c.Id].unlocked : c.unlocked
+                unlocked = c.Id <= savedCars - 1 ? gameData.CarsRegistry[c.Id].unlocked : c.unlocked,
+                canBuyIt = c.Id <= savedCars - 1 ? gameData.CarsRegistry[c.Id].canBuyIt : c.canBuyIt
             }).ToArray();
 
         }
@@ -92,6 +93,9 @@ public class GameDataManager : MonoBehaviour
                 carName = c.carName,
                 unlocked = c.unlocked
             }).ToArray();
+
+            gameData.musicVolume = 0.5f;
+            gameData.sfxVolume = 0.5f;
         }
             
 
@@ -186,5 +190,29 @@ public class GameDataManager : MonoBehaviour
         }
 
         return powerups;
+    }
+
+    public float GetMusicVolume()
+    {
+        return gameData.musicVolume;
+    }
+
+    public float GetSFXVolume()
+    {
+        return gameData.sfxVolume;
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        gameData.musicVolume = volume;
+
+        SaveData();
+    }
+
+    public void SetSFXVolume(float volume)
+    {
+        gameData.sfxVolume = volume;
+
+        SaveData();
     }
 }

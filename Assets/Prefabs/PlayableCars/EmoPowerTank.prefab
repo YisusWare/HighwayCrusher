@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6612349091723882617}
   - component: {fileID: 7471027831471615177}
   - component: {fileID: 336016198167210983}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EmoPowerTank
   m_TagString: Player
   m_Icon: {fileID: 0}

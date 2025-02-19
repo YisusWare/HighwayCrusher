@@ -52,15 +52,27 @@ public class MainMenu : MonoBehaviour
 
     private int currentCoins;
 
+    //settings section
+
+    [SerializeField] GameObject settingsPannel;
+
+    [SerializeField] Slider MusicSlider;
+    [SerializeField] Slider SFXSlider;
+
+
+
    
 
     private List<PowerUpContainer> availableItems = new List<PowerUpContainer>();
     private void Start()
     {
-        
+
+        MusicSlider.value = GameManager.instance.GetMusicVolume();
+
+        SFXSlider.value = GameManager.instance.GetSFXVolume();
         PreGamePanel.transform.localScale = Vector2.zero;
         ResumeGamePanel.transform.localScale = Vector2.zero;
-        
+        settingsPannel.transform.localScale = Vector2.zero;
 
         buyButton.interactable = false;
         LoadItemButtons();
@@ -257,7 +269,7 @@ public class MainMenu : MonoBehaviour
             itemIcon.transform.SetParent(newButton.transform, false);
             if (positionIndex == 0)
             {
-                Debug.Log("cursor set");
+               
                 itemCursor.transform.SetParent(newButton.transform, false);
                 itemCursor.transform.localPosition = newButton.transform.localPosition;
 
@@ -368,5 +380,26 @@ public class MainMenu : MonoBehaviour
         AdsManager.instance.rewardedAds.ShowRewardedAd();    
     }
 
+    public void ShowSettingsPannel()
+    {
+        settingsPannel.transform.LeanScale(Vector2.one, 0.3f);
+    }
+
+    public void HideSettingsPannel()
+    {
+        settingsPannel.transform.LeanScale(Vector2.zero,0.3f);
+    }
+
+    public void SaveMusicVolume()
+    {
+        AudioManager.instance.SetMusicVolume(MusicSlider.value);
+        GameManager.instance.SetMusicVolume(MusicSlider.value);
+    }
+
+    public void SaveSFXVolume()
+    {
+        AudioManager.instance.SetSFXVolume(SFXSlider.value);
+        GameManager.instance.SetSFXVolume(SFXSlider.value);
+    }
 
 }

@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
         {
             powerUpIndex.Add(powerUp.index);
         }
-        Debug.Log(savedGame);
+       
         savedGame.powerUpIndex = powerUpIndex.ToArray();
         savedGame.metersRun = (int) metersRun;
         savedGame.carIndex = selectedCar.Id;
@@ -116,7 +116,7 @@ public class GameManager : MonoBehaviour
         {
 
             dataManager.playableCars[i].unlocked = carsData[i].unlocked;
-            
+            dataManager.playableCars[i].canBuyIt = carsData[i].canBuyIt;
         }
         selectedCar = dataManager.playableCars[0];
     }
@@ -125,8 +125,8 @@ public class GameManager : MonoBehaviour
     {
         currentState = GameState.gameOverScreen;
         isPlayerDead = true;
-        
-        player.gameObject.SetActive(false);
+
+        player.gameObject.GetComponent<SpriteRenderer>().enabled = false;
 
         dataManager.LoadData();
         int highScore = dataManager.getHighScore();
@@ -160,18 +160,14 @@ public class GameManager : MonoBehaviour
             dataManager.SaveData();
         }
         
-
-        player.gameObject.SetActive(true);
-        player.SetInvincibleTimer(3f);
-        player.RestartHealth();
-
-        
-
-        isPlayerDead = false;
-
-        currentState = GameState.gameScreen;
-        Color spriteColor = new Color(255, 255, 255, 255);
-        player.gameObject.GetComponent<SpriteRenderer>().color = spriteColor;
+        if(currentState == GameState.gameOverScreen)
+        {
+            player.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            player.SetInvincibleTimer(3f);
+            player.RestartHealth();
+            isPlayerDead = false;
+            currentState = GameState.gameScreen;
+        }
 
         IsAdReward = false;
         
@@ -187,6 +183,16 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(selectedCar.prefab, new Vector2(0, 0), Quaternion.identity);
             player = FindObjectOfType<PlayerController>();
+        }
+
+        if(scene.buildIndex == 1)
+        {
+            AudioManager.instance.PlayRadio();
+        }
+
+        if(scene.buildIndex == 0)
+        {
+            AudioManager.instance.PlayTrack(0);
         }
         
     }
@@ -259,6 +265,26 @@ public class GameManager : MonoBehaviour
         }
 
         return powerups;
+    }
+
+    public float GetMusicVolume()
+    {
+        return dataManager.GetMusicVolume();
+    }
+
+    public float GetSFXVolume()
+    {
+        return dataManager.GetSFXVolume();
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        dataManager.SetMusicVolume(volume);
+    }
+
+    public void SetSFXVolume(float volume)
+    {
+        dataManager.SetSFXVolume(volume);
     }
 
     public event EventHandler OnLoadCarsData;

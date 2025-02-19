@@ -41,7 +41,7 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSh
 
     public void OnUnityAdsShowStart(string placementId)
     {
-        throw new System.NotImplementedException();
+        AudioManager.instance.PauseMusic();
     }
 
     public void OnUnityAdsShowClick(string placementId)
@@ -52,5 +52,6 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSh
     public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
     {
         Debug.Log("Interstital ad completed");
+        AudioManager.instance.ResumeMusic();
     }
 }

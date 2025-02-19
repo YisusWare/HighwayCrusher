@@ -34,6 +34,7 @@ public class CarShop : MonoBehaviour
     Sprite CarCursorImage;
 
     GameObject itemCursor;
+    int selectedCarButtonIndex = 0;
     
     private void Start()
     {
@@ -58,27 +59,30 @@ public class CarShop : MonoBehaviour
 
         foreach (var car in carSprites)
         {
-            GameObject newButton = new GameObject("" + car.Id);
 
-            RectTransform rectTransform = newButton.AddComponent<RectTransform>();
+            if (car.canBuyIt) { 
+                GameObject newButton = new GameObject("" + car.Id);
 
-            rectTransform.sizeDelta = new Vector2(160, 300);
+                RectTransform rectTransform = newButton.AddComponent<RectTransform>();
 
-            Image buttonImage = newButton.AddComponent<Image>();
-            buttonImage.sprite = car.sprite;
-            buttonImage.color = Color.white;
+                rectTransform.sizeDelta = new Vector2(160, 300);
 
-            Button buttonComponent = newButton.AddComponent<Button>();
-            ColorBlock color = buttonComponent.colors;
+                Image buttonImage = newButton.AddComponent<Image>();
+                buttonImage.sprite = car.sprite;
+                buttonImage.color = Color.white;
 
-            color.selectedColor = new Color(1, 1, 1, 0.5f);
-            color.disabledColor = new Color(1, 1, 1, 0.5f);
+                Button buttonComponent = newButton.AddComponent<Button>();
+                ColorBlock color = buttonComponent.colors;
 
-            buttonComponent.interactable = !car.unlocked;
+                color.selectedColor = new Color(1, 1, 1, 0.5f);
+                color.disabledColor = new Color(1, 1, 1, 0.5f);
 
-            newButton.transform.SetParent(carsContainer.transform, false);
-            buttonComponent.onClick.AddListener(() => SetSelectedCar(car,newButton));
-            AvailableCarsButtons.Add(buttonComponent);
+                buttonComponent.interactable = !car.unlocked;
+
+                newButton.transform.SetParent(carsContainer.transform, false);
+                buttonComponent.onClick.AddListener(() => SetSelectedCar(car,newButton));
+                AvailableCarsButtons.Add(buttonComponent);
+            }
         }
 
         
@@ -102,6 +106,8 @@ public class CarShop : MonoBehaviour
 
     private void SetSelectedCar(PlayableCarModel car,GameObject button)
     {
+
+        
         itemCursor.SetActive(true);
         itemCursor.transform.SetParent(button.transform,false);
         itemCursor.transform.position = button.transform.position;
@@ -122,6 +128,8 @@ public class CarShop : MonoBehaviour
         powerSlider.value = selectedCarPlayer.Power;
         selectedCarImage.sprite = selectedCar.sprite;
         selectedCarImage.gameObject.SetActive(true);
+        selectedCarButtonIndex = button.transform.GetSiblingIndex();
+        Debug.Log(selectedCarButtonIndex);
     }
 
     public void BuyCar()
@@ -135,7 +143,7 @@ public class CarShop : MonoBehaviour
         GameManager.instance.dataManager.BuyCar(selectedCar);
         currentCoins = GameManager.instance.dataManager.getTotalCoins();
         currentCoinsText.text = "Your cash: $" + currentCoins;
-        AvailableCarsButtons[selectedCar.Id].interactable = false;
+        AvailableCarsButtons[selectedCarButtonIndex].interactable = false;
         buyButton.interactable = false;
         selectedCarImage.gameObject.SetActive(false);
 

@@ -22,7 +22,7 @@ public class FireBallConcrete : AllyProjectile
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Trigger Entered");
+        
         if (collision.gameObject.CompareTag("Enemy"))
         {
             
@@ -41,13 +41,18 @@ public class FireBallConcrete : AllyProjectile
 
     private void MakeDamage()
     {
-        Collider2D[] enemyColliders = Physics2D.OverlapCircleAll(explosionCenter.position, 0.4f,enemyLayer);
+        Collider2D[] enemyColliders = Physics2D.OverlapCircleAll(explosionCenter.position, 0.5f,enemyLayer);
         
         foreach (Collider2D collider in enemyColliders)
         {
-           
+
+            BreakableObject breakableObject = collider.gameObject.GetComponent<BreakableObject>();
             
-            collider.gameObject.GetComponent<Obstacle>().TakeDamage(power);
+            if(breakableObject != null)
+            {
+                breakableObject.TakeDamage(power);
+            }
+            
         }
     }
 

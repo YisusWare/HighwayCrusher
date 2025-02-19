@@ -36,7 +36,7 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
 
     public void OnUnityAdsShowStart(string placementId)
     {
-        throw new System.NotImplementedException();
+        AudioManager.instance.PauseMusic();
     }
 
     public void OnUnityAdsShowClick(string placementId)
@@ -52,6 +52,7 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
 
             GameManager.instance.IsAdReward = true;
             GameManager.instance.ContinueGameWithCoins();
+            AudioManager.instance.ResumeMusic();
         }
     }
 }

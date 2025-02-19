@@ -11,4 +11,5 @@ public class PlayableCarModel : ScriptableObject
     public Sprite sprite;
     public int price;
     public bool unlocked;
+    public bool canBuyIt;
 }
