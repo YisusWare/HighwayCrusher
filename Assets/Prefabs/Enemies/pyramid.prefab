@@ -196,7 +196,7 @@ MonoBehaviour:
   shootingCadence: 4
   shootingPoint: {fileID: 8136174170920965975}
   bulletPrefab: {fileID: 1870957633920701443, guid: 78d1161995dfe0f4583deb2b6868ebd3, type: 3}
-  playerDistanceThereshold: 2.5
+  playerDistanceThereshold: 4
 --- !u!1 &4227342969589070754
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,10 +399,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthPoints: 15
-  MaxHealthPoints: 30
+  MaxHealthPoints: 35
   healthBar: {fileID: 9045785690424791473}
   damage: 8
-  power: 8
+  power: 10
 --- !u!50 &1962487502487135750
 Rigidbody2D:
   serializedVersion: 4
@@ -411,7 +411,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4405145139097429906}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

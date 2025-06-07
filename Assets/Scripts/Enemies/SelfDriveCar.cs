@@ -123,6 +123,7 @@ public class SelfDriveCar : MonoBehaviour
             {
                 chaseMode = true;
                 transform.SetParent(null);
+                rigidBody.bodyType = RigidbodyType2D.Dynamic;
 
                 Car enemyCar = GetComponent<Car>();
 
