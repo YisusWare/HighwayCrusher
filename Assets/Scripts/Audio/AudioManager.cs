@@ -25,6 +25,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
 
     private bool isPaused;
+    int currentRadioClip;
 
     private void Awake()
     {
@@ -43,16 +44,32 @@ public class AudioManager : MonoBehaviour
     public void PlayRadio()
     {
         isPaused = false;
+        currentRadioClip = Random.Range(0, radioMusicTracks.Length);
         StartCoroutine(PlayRadioCourutine());
     }
 
+    public void PlaySpecialStage()
+    {
+        isPaused = false;
+        StartCoroutine(PlaySpecialStageCourutine());
+    }
+
+    public void PlayMainMenu()
+    {
+        isPaused = false;
+        StartCoroutine(MainMenuCourutine());
+    }
     private IEnumerator PlayRadioCourutine()
     {
         while (true)
         {
-            int trackIndex = Random.Range(0, radioMusicTracks.Length);
+            currentRadioClip++;
+            if(currentRadioClip >= radioMusicTracks.Length)
+            {
+                currentRadioClip = 0;
+            }
 
-            AudioClip nextClip = radioMusicTracks[trackIndex];
+            AudioClip nextClip = radioMusicTracks[currentRadioClip];
 
             musicSource.clip = nextClip;
             musicSource.Play();
@@ -61,6 +78,57 @@ public class AudioManager : MonoBehaviour
             {
                 yield return null; // Esperar hasta que termine o el juego se pause
             }
+
+            
+        }
+    }
+
+    private IEnumerator PlaySpecialStageCourutine()
+    {
+
+        int songIndex = 1;
+        while (true)
+        {
+            
+            AudioClip nextClip = GameMusicTracks[songIndex];
+
+            musicSource.clip = nextClip;
+            
+            musicSource.Play();
+
+            if(songIndex == 1)
+            {
+                songIndex++;
+            }
+            
+            while (musicSource.isPlaying || isPaused)
+            {
+                yield return null; // Esperar hasta que termine o el juego se pause
+            }
+
+
+        }
+    }
+
+    private IEnumerator MainMenuCourutine()
+    {
+
+        int songIndex = 0;
+        while (true)
+        {
+
+            AudioClip nextClip = GameMusicTracks[songIndex];
+
+            musicSource.clip = nextClip;
+
+            musicSource.Play();
+
+            while (musicSource.isPlaying || isPaused)
+            {
+                yield return null; // Esperar hasta que termine o el juego se pause
+            }
+
+
         }
     }
 

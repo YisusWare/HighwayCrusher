@@ -18,16 +18,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 317706201452446435, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
       propertyPath: maxHealth
-      value: 50
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 317706201452446435, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
       propertyPath: Acceleration
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2064275705852536399, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -52004963, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
+    - target: {fileID: 2289419602939290266, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289419602939290266, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3320257174777825860, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
       propertyPath: m_Name
       value: Chavez Variant
@@ -36,6 +44,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 69968bea54021154d93f47a7726ac241, type: 2}
+    - target: {fileID: 4773619200169299626, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4773619200169299626, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.08

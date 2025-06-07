@@ -136,6 +136,15 @@ MonoBehaviour:
   speed: 4
   Acceleration: 4
   Power: 2
+  blueCoinNumbers:
+  - {fileID: 5192164632283810370, guid: 6f2df76c052eba34b86185b526220d63, type: 3}
+  - {fileID: 3385762193132024159, guid: c5d1b2fa2ad4aa24d99c1f64ac792dc6, type: 3}
+  - {fileID: 7944696675224158809, guid: 49e1c3e62987f724aaaf29cff9f1d4a3, type: 3}
+  - {fileID: 7281029847623143545, guid: fae5a7f3daf7ff347954e9ee28f84e9d, type: 3}
+  - {fileID: 4746655070817096554, guid: 8026b0e1671b2054ba00952191411075, type: 3}
+  - {fileID: 1929459545269278345, guid: 0de76ab1f6d26b5418c3bde4877e424c, type: 3}
+  - {fileID: 3395934327364641583, guid: 707b2b644bd5036479f5eea2c0496411, type: 3}
+  - {fileID: 4747108726273513397, guid: cca4b1f589249c6428924622777b854a, type: 3}
 --- !u!50 &7315224775764494125
 Rigidbody2D:
   serializedVersion: 4
@@ -151,7 +160,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

@@ -8,9 +8,15 @@ public class FireBallConcrete : AllyProjectile
     private Animator animator;
     [SerializeField]
     Transform explosionCenter;
+    [SerializeField]
+    bool environmentSpeed;
     // Start is called before the first frame update
     void Start()
     {
+        if (environmentSpeed)
+        {
+            speed = FindObjectOfType<PlayerController>().speed * -1;
+        }
         animator = GetComponent<Animator>();
     }
 
@@ -45,6 +51,12 @@ public class FireBallConcrete : AllyProjectile
         
         foreach (Collider2D collider in enemyColliders)
         {
+            ScoreIncreaseObject scoreObject = collider.gameObject.GetComponent<ScoreIncreaseObject>();
+
+            if(scoreObject != null)
+            {
+                scoreObject.OnGetPoints();
+            }
 
             BreakableObject breakableObject = collider.gameObject.GetComponent<BreakableObject>();
             
@@ -66,6 +78,6 @@ public class FireBallConcrete : AllyProjectile
 
         
         // Dibujar el círculo en 2D
-        Gizmos.DrawWireSphere(explosionCenter.position, 0.4f); 
+        Gizmos.DrawWireSphere(explosionCenter.position, 0.5f); 
     }
 }

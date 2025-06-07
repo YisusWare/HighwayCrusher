@@ -11,4 +11,70 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/FasesEspeciales/01SpecialStage.unity
+    guid: 04d21440fb0e764498784e21c905b89c
+  - enabled: 1
+    path: Assets/Scenes/FasesEspeciales/02SpecialStage.unity
+    guid: f14b7353c3f757c4a926ed931eca56f4
+  - enabled: 1
+    path: Assets/Scenes/FasesEspeciales/03SpecialStage.unity
+    guid: f693db361816bbc48b8b2b65af73cb89
+  - enabled: 1
+    path: Assets/Scenes/FasesEspeciales/04SpecialStage.unity
+    guid: 1f012b71b8f00f64b88987915426da58
+  - enabled: 1
+    path: Assets/Scenes/FasesEspeciales/05SpecialStage.unity
+    guid: cfcf50f6e4b7eb143a577c8277856317
+  - enabled: 1
+    path: Assets/Scenes/FasesEspeciales/06SpecialStage.unity
+    guid: 11efc5ffc560247408e9f26589d58fc4
+  - enabled: 1
+    path: Assets/Scenes/FasesEspeciales/07SpecialStage.unity
+    guid: 2db9c7d4f063884469271998ca062216
+  - enabled: 1
+    path: Assets/Scenes/FasesEspeciales/08SpecialStage.unity
+    guid: 6fdd1a4fe784c0c43904b8da9336187c
+  - enabled: 1
+    path: Assets/Scenes/FasesEspeciales/09SpecialStage.unity
+    guid: 67372d0a6f0199a4da73fd559b7e51e2
+  - enabled: 1
+    path: Assets/Scenes/FasesEspeciales/10SpecialStage.unity
+    guid: b32217e48f822094ba7b00e6de8feceb
+  - enabled: 1
+    path: Assets/Scenes/FasesEspeciales/11SpecialStage.unity
+    guid: 0caa95c029e389247ab84c1ac9fd30d4
+  - enabled: 1
+    path: Assets/Scenes/FasesEspeciales/12SpecialStage.unity
+    guid: 29832003f0cb74d4c93de5c1423d2d5f
+  - enabled: 1
+    path: Assets/Scenes/FasesEspeciales/13SpecialStage.unity
+    guid: 04a45035c0a8e264a88a0166ed39cb9a
+  - enabled: 1
+    path: Assets/Scenes/FasesEspeciales/14SpecialStage.unity
+    guid: a48a4007b20bdfc4c8b7bf439ce6a6b3
+  - enabled: 1
+    path: Assets/Scenes/FasesEspeciales/15SpecialStage.unity
+    guid: 9bd5a0b70177dd0418bec56c25b424c7
+  - enabled: 1
+    path: Assets/Scenes/FasesEspeciales/16SpecialStage.unity
+    guid: e1073462ea4d94d4885eb22f9f80f3b6
+  - enabled: 1
+    path: Assets/Scenes/FasesEspeciales/17SpecialStage.unity
+    guid: 6d437f5856be2674abf95728687dbc5b
+  - enabled: 1
+    path: Assets/Scenes/FasesEspeciales/18SpecialStage.unity
+    guid: 12ffde8cefd4c1a47b7faa006f8abb5d
+  - enabled: 1
+    path: Assets/Scenes/FasesEspeciales/19SpecialStage.unity
+    guid: a36e468e2e54b5a4995026b429797f2a
+  - enabled: 1
+    path: Assets/Scenes/FasesEspeciales/20SpecialStage.unity
+    guid: 0b394a41388963945be85792eed3ea31
+  - enabled: 1
+    path: Assets/Scenes/FasesEspeciales/21SpecialStage.unity
+    guid: 0bffb991c68238046881458445938bb5
+  - enabled: 1
+    path: Assets/Scenes/FasesEspeciales/22SpecialStage.unity
+    guid: 3a9f3bead36684b44af1bc57fb842aa0
   m_configObjects: {}

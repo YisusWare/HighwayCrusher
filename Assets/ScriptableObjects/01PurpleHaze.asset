@@ -17,5 +17,6 @@ MonoBehaviour:
   carDescription: Purple Haze
   prefab: {fileID: 503276909276000652, guid: 86e754ac8fcfa014eac489b10ae4d3e5, type: 3}
   sprite: {fileID: -1094448974, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
-  price: 340
+  price: 250
   unlocked: 0
+  canBuyIt: 1

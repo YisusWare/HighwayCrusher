@@ -40,6 +40,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -261133927, guid: 772069d84f29c134c8523d9223cae4bb, type: 3}
+    - target: {fileID: 4221998506126119363, guid: 66ba6d3451371cb4994a0e6cc37f1012, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0.8025
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221998506126119363, guid: 66ba6d3451371cb4994a0e6cc37f1012, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.075
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221998506126119363, guid: 66ba6d3451371cb4994a0e6cc37f1012, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0238
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221998506126119363, guid: 66ba6d3451371cb4994a0e6cc37f1012, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.5094
+      objectReference: {fileID: 0}
     - target: {fileID: 5295593332473702927, guid: 66ba6d3451371cb4994a0e6cc37f1012, type: 3}
       propertyPath: m_Name
       value: Boulder Variant 1

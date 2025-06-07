@@ -17,5 +17,6 @@ MonoBehaviour:
   carDescription: BlueRocket
   prefab: {fileID: 2762762133981790766, guid: 51665eb84797ac7429ce16afbd50df1c, type: 3}
   sprite: {fileID: 797331981, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
-  price: 400
+  price: 350
   unlocked: 0
+  canBuyIt: 0

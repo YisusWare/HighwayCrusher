@@ -22,16 +22,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3206752028141123883, guid: 86e754ac8fcfa014eac489b10ae4d3e5, type: 3}
       propertyPath: speed
-      value: 4
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206752028141123883, guid: 86e754ac8fcfa014eac489b10ae4d3e5, type: 3}
+      propertyPath: maxHealth
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 3206752028141123883, guid: 86e754ac8fcfa014eac489b10ae4d3e5, type: 3}
       propertyPath: Acceleration
-      value: 3.7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3768901769649806727, guid: 86e754ac8fcfa014eac489b10ae4d3e5, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1930520036, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
+      objectReference: {fileID: 1970140575, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
+    - target: {fileID: 3976033187022068050, guid: 86e754ac8fcfa014eac489b10ae4d3e5, type: 3}
+      propertyPath: m_Mass
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5984045194268669845, guid: 86e754ac8fcfa014eac489b10ae4d3e5, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -81,12 +89,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7698726263779571042, guid: 86e754ac8fcfa014eac489b10ae4d3e5, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5297241
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698726263779571042, guid: 86e754ac8fcfa014eac489b10ae4d3e5, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1564941
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698726263779571042, guid: 86e754ac8fcfa014eac489b10ae4d3e5, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0012512207
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698726263779571042, guid: 86e754ac8fcfa014eac489b10ae4d3e5, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.01184082
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698726263779571042, guid: 86e754ac8fcfa014eac489b10ae4d3e5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698726263779571042, guid: 86e754ac8fcfa014eac489b10ae4d3e5, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.64
       objectReference: {fileID: 0}
     - target: {fileID: 7698726263779571042, guid: 86e754ac8fcfa014eac489b10ae4d3e5, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.16
+      value: 1.27
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

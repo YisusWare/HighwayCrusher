@@ -160,9 +160,8 @@ public class MainMenu : MonoBehaviour
     {
         if (GameManager.instance.dataManager.IsSavedData())
         {
-            //open continue game panel
+            buyButton.interactable = false;
             ResumeGamePanel.transform.LeanScale(Vector2.one, 0.3f);
-
             return;
         }
 
@@ -178,7 +177,9 @@ public class MainMenu : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+        currentCoins = GameManager.instance.dataManager.getTotalCoins();
 
+        currentCoinsText.text = "$ " + currentCoins;
 
         InitializeUnlockedCarsSelection();
         PreGamePanel.transform.LeanScale(Vector2.one, 0.3f);
@@ -195,7 +196,7 @@ public class MainMenu : MonoBehaviour
     {
 
         GameManager.instance.DeleteSavedGameData();
-        SceneManager.LoadScene(1);
+        GameManager.instance.ChangeScene(1);
         GameManager.instance.isPlayerDead = false;
         GameManager.instance.SetBoughtItems(bougthItems);
     }
@@ -205,7 +206,7 @@ public class MainMenu : MonoBehaviour
         GameManager.instance.StartSavedGame();
 
         int nextScene = GameManager.instance.savedGame.SceneIndex;
-        SceneManager.LoadScene(nextScene);
+        GameManager.instance.ChangeScene(nextScene);
     }
 
     public void LoadItemButtons()
@@ -273,7 +274,7 @@ public class MainMenu : MonoBehaviour
                 itemCursor.transform.SetParent(newButton.transform, false);
                 itemCursor.transform.localPosition = newButton.transform.localPosition;
 
-                buyButton.interactable = true;
+                
 
                 PowerUpContainer selectedItem = availableItems[positionIndex];
 
@@ -284,17 +285,28 @@ public class MainMenu : MonoBehaviour
 
             }
             itemButtons.Add(newButton);
-            
 
+            
         }
 
-       
+        
+        if (availableItems[0].price > currentCoins)
+        {
+            buyButton.interactable = false;
+        }
+        else
+        {
+            buyButton.interactable = true;
+        }
+
+
     }
 
     public void SelectItem(int itemIndex,GameObject button,GameObject itemCursor)
     {
 
-        buyButton.interactable = true;
+        int currentCoins = GameManager.instance.dataManager.getTotalCoins();
+        
 
         PowerUpContainer selectedItem = availableItems[itemIndex];
 
@@ -305,6 +317,15 @@ public class MainMenu : MonoBehaviour
 
         itemCursor.transform.SetParent(button.transform);
         itemCursor.transform.position = button.transform.position;
+
+        if(selectedItem.price > currentCoins)
+        {
+            buyButton.interactable = false;
+        }
+        else
+        {
+            buyButton.interactable = true;
+        }
     }
 
     public void BuyItem()
@@ -314,7 +335,7 @@ public class MainMenu : MonoBehaviour
         PowerUpContainer selectedItem = availableItems[selectedItemIndex];
 
         int coinsAux = GameManager.instance.dataManager.getTotalCoins() - selectedItem.price;
-
+        currentCoins = coinsAux;
 
         GameManager.instance.dataManager.setTotalCoins(coinsAux);
 
@@ -365,6 +386,8 @@ public class MainMenu : MonoBehaviour
                 icon.GetComponent<Image>().color = new Color(255, 255, 255, 0.5f);
             }
         }
+
+       
     }
 
     public void clearItemButtons()
@@ -400,6 +423,11 @@ public class MainMenu : MonoBehaviour
     {
         AudioManager.instance.SetSFXVolume(SFXSlider.value);
         GameManager.instance.SetSFXVolume(SFXSlider.value);
+    }
+
+    public void DeleteGameButton()
+    {
+        GameManager.instance.DeleteAllSavedGameData();
     }
 
 }

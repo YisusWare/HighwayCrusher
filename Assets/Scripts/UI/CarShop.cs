@@ -32,6 +32,10 @@ public class CarShop : MonoBehaviour
     Image selectedCarImage;
     [SerializeField]
     Sprite CarCursorImage;
+    [SerializeField]
+    Sprite spriteCandado;
+    [SerializeField]
+    Sprite agotado;
 
     GameObject itemCursor;
     int selectedCarButtonIndex = 0;
@@ -48,7 +52,7 @@ public class CarShop : MonoBehaviour
         GameManager.instance.dataManager.LoadData();
         var carSprites = GameManager.instance.dataManager.playableCars;
         currentCoins = GameManager.instance.dataManager.getTotalCoins();
-        currentCoinsText.text = "Your cash: $" + currentCoins;
+        currentCoinsText.text = "$" + currentCoins;
 
         itemCursor = new GameObject("ItemCursor");
         RectTransform cursorTransform = itemCursor.AddComponent<RectTransform>();
@@ -60,7 +64,8 @@ public class CarShop : MonoBehaviour
         foreach (var car in carSprites)
         {
 
-            if (car.canBuyIt) { 
+           if(car.Id != 0)
+            {
                 GameObject newButton = new GameObject("" + car.Id);
 
                 RectTransform rectTransform = newButton.AddComponent<RectTransform>();
@@ -74,15 +79,50 @@ public class CarShop : MonoBehaviour
                 Button buttonComponent = newButton.AddComponent<Button>();
                 ColorBlock color = buttonComponent.colors;
 
-                color.selectedColor = new Color(1, 1, 1, 0.5f);
-                color.disabledColor = new Color(1, 1, 1, 0.5f);
 
-                buttonComponent.interactable = !car.unlocked;
+
+
+
+                color.selectedColor = new Color(1, 1, 1, 0.8f);
+                color.disabledColor = new Color(1, 1, 1, 0.8f);
+
+
 
                 newButton.transform.SetParent(carsContainer.transform, false);
-                buttonComponent.onClick.AddListener(() => SetSelectedCar(car,newButton));
+
+                if (!car.canBuyIt)
+                {
+                    buttonComponent.interactable = false;
+                    buttonImage.color = new Color(0, 0, 0, 1);
+
+                    GameObject candado = new GameObject("iconoCandado");
+                    RectTransform candadoTansform = candado.AddComponent<RectTransform>();
+
+                    candadoTansform.sizeDelta = new Vector2(50, 50);
+
+                    Image candadoImage = candado.AddComponent<Image>();
+                    candadoImage.sprite = spriteCandado;
+                    candadoImage.color = Color.white;
+                    candado.transform.SetParent(newButton.transform, false);
+                }
+
+                if (car.unlocked)
+                {
+                    buttonComponent.interactable = false;
+                    GameObject listonAgotado = new GameObject("iconoAgotado");
+                    RectTransform candadoTansform = listonAgotado.AddComponent<RectTransform>();
+
+                    candadoTansform.sizeDelta = new Vector2(350, 100);
+
+                    Image listonImage = listonAgotado.AddComponent<Image>();
+                    listonImage.sprite = agotado;
+                    listonImage.color = Color.white;
+                    listonAgotado.transform.SetParent(newButton.transform, false);
+                }
+                buttonComponent.onClick.AddListener(() => SetSelectedCar(car, newButton));
                 AvailableCarsButtons.Add(buttonComponent);
             }
+            
         }
 
         
@@ -94,6 +134,7 @@ public class CarShop : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+        GameManager.instance.SetPlayableCarsStatus();
         InitializeAvailableCars();
         ShopPanel.transform.LeanScale(Vector2.one, 0.3f);
 
@@ -120,6 +161,10 @@ public class CarShop : MonoBehaviour
         {
             buyButton.interactable = true;
         }
+        else
+        {
+            buyButton.interactable = false;
+        }
 
         PlayerController selectedCarPlayer = selectedCar.prefab.GetComponent<PlayerController>();
         speedSlider.value = selectedCarPlayer.speed;
@@ -142,10 +187,23 @@ public class CarShop : MonoBehaviour
 
         GameManager.instance.dataManager.BuyCar(selectedCar);
         currentCoins = GameManager.instance.dataManager.getTotalCoins();
-        currentCoinsText.text = "Your cash: $" + currentCoins;
-        AvailableCarsButtons[selectedCarButtonIndex].interactable = false;
+        currentCoinsText.text = "$" + currentCoins;
+        Button bougthCarButton = AvailableCarsButtons[selectedCarButtonIndex];
+
+        bougthCarButton.interactable = false;
+
         buyButton.interactable = false;
+
         selectedCarImage.gameObject.SetActive(false);
+         GameObject listonAgotado = new GameObject("iconoAgotado");
+                    RectTransform candadoTansform = listonAgotado.AddComponent<RectTransform>();
+
+                    candadoTansform.sizeDelta = new Vector2(350, 100);
+
+                    Image listonImage = listonAgotado.AddComponent<Image>();
+                    listonImage.sprite = agotado;
+                    listonImage.color = Color.white;
+                    listonAgotado.transform.SetParent(bougthCarButton.transform, false);
 
         selectedCarName.text = "";
         selectedCarPrice.text = "";

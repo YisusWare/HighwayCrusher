@@ -17,5 +17,6 @@ MonoBehaviour:
   carDescription: Calaca movil Type-B
   prefab: {fileID: 5753705666253182150, guid: cda429bb37f60a04a9ba122f370d6fce, type: 3}
   sprite: {fileID: 1826592589, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
-  price: 275
+  price: 250
   unlocked: 0
+  canBuyIt: 0

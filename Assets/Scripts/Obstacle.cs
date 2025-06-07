@@ -12,31 +12,41 @@ public class Obstacle : BreakableObject
     
     
 
-    private void Start()
+    protected override void Start()
     {
-        animator = GetComponent<Animator>();
+        base.Start();
+        
         canMakeDamage = true;
-        HealthPoints = MaxHealthPoints;
+        
 
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player") && canMakeDamage)
+    //    {
+            
+    //        var player = collision.gameObject.GetComponent<PlayerController>();
+            
+    //        player.takeDamage(damage + (power - player.Power));
+
+    //        TakeDamage(player.Power);
+    //    }
+    //}
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player") && canMakeDamage)
         {
-            
+
             var player = collision.gameObject.GetComponent<PlayerController>();
-            
+
             player.takeDamage(damage + (power - player.Power));
 
             TakeDamage(player.Power);
         }
     }
 
-    
-    
-
-    
-    public void DestroyEnemy() 
+    public override void DestroyEnemy() 
     {
         Destroy(this.gameObject);
     }

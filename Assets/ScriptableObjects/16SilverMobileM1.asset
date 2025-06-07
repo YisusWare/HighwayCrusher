@@ -17,5 +17,6 @@ MonoBehaviour:
   carDescription: Silver Mobile M1
   prefab: {fileID: 9088941854735211998, guid: c543f30be5344904aaac01cd917a022c, type: 3}
   sprite: {fileID: -585539092, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
-  price: 360
+  price: 380
   unlocked: 0
+  canBuyIt: 0

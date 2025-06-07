@@ -53,6 +53,12 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
             GameManager.instance.IsAdReward = true;
             GameManager.instance.ContinueGameWithCoins();
             AudioManager.instance.ResumeMusic();
+            GameOverMenu gameOverMenu = FindObjectOfType<GameOverMenu>();
+
+            if(gameOverMenu != null)
+            {
+                gameOverMenu.HideGameOverPanel();
+            }
         }
     }
 }

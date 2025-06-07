@@ -25,15 +25,18 @@ public class PauseMenu : MonoBehaviour
     }
     public void PauseGame()
     {
-        GameManager.instance.PauseGame();
-        PausePanel.transform.LeanScale(Vector2.one, 0.3f);
+
+        PausePanel.transform.LeanScale(Vector2.one, 0.3f)
+            .setIgnoreTimeScale(true);
         AudioManager.instance.PauseMusic();
+        GameManager.instance.PauseGame();
     }
 
     public void ResumeGame()
     {
         GameManager.instance.ResumeGame();
-        PausePanel.transform.LeanScale(Vector2.zero, 0.3f);
+        PausePanel.transform.LeanScale(Vector2.zero, 0.3f)
+            .setIgnoreTimeScale(true); 
         AudioManager.instance.ResumeMusic();
     }
 
@@ -44,12 +47,14 @@ public class PauseMenu : MonoBehaviour
 
     public void ShowSettingsPannel()
     {
-        settingsPannel.transform.LeanScale(Vector2.one, 0.3f);
+        settingsPannel.transform.LeanScale(Vector2.one, 0.3f)
+            .setIgnoreTimeScale(true);
     }
 
     public void HideSettingsPannel()
     {
-        settingsPannel.transform.LeanScale(Vector2.zero, 0.3f);
+        settingsPannel.transform.LeanScale(Vector2.zero, 0.3f)
+            .setIgnoreTimeScale(true);
     }
 
     public void SaveMusicVolume()

@@ -32,6 +32,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -585539092, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
+    - target: {fileID: 2289419602939290266, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
+      propertyPath: m_Mass
+      value: 1.7
+      objectReference: {fileID: 0}
     - target: {fileID: 3320257174777825860, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
       propertyPath: m_Name
       value: SilverMobleM1

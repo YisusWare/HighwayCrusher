@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3435938449743731885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 30769839830107563}
+  - component: {fileID: 4906216079426993180}
+  - component: {fileID: 7851770892542888500}
+  - component: {fileID: 6198397554233545124}
+  m_Layer: 0
+  m_Name: GrassBiomeSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &30769839830107563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3435938449743731885}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.36, y: -0.7, z: -0.019459244}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4906216079426993180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3435938449743731885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fa91e23d6feab42933fb3abfab6169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: -3
+  Xspeed: 0
+--- !u!114 &7851770892542888500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3435938449743731885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf88a59d7879684eb2f3d0454694247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 934264483529596134, guid: 10e71b089f6afe74f833e171caa5fcbb, type: 3}
+  - {fileID: 5412136294094222516, guid: 14a826be61c9ab643b8e3ab24c96d4e1, type: 3}
+  - {fileID: 5412136294094222516, guid: 14a826be61c9ab643b8e3ab24c96d4e1, type: 3}
+  - {fileID: 5412136294094222516, guid: 14a826be61c9ab643b8e3ab24c96d4e1, type: 3}
+  - {fileID: 3587106112437393418, guid: dedaf1a71b2d9b542b6458222551fb7d, type: 3}
+  - {fileID: 5845270888981160400, guid: edd562bd0d07af047a94c4856dcdcc21, type: 3}
+  - {fileID: 5845270888981160400, guid: edd562bd0d07af047a94c4856dcdcc21, type: 3}
+  - {fileID: 5845270888981160400, guid: edd562bd0d07af047a94c4856dcdcc21, type: 3}
+--- !u!50 &6198397554233545124
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3435938449743731885}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 3760982107610058640}
   - component: {fileID: 6658123949544299023}
   - component: {fileID: 7186215083713326911}
+  - component: {fileID: 4420122705383753637}
   m_Layer: 0
   m_Name: 00FireBallContainer
   m_TagString: Untagged
@@ -160,7 +161,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2039856741
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: -352775169, guid: e5a6ef8195fbe044db264f9d5a40fc6d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -235,4 +236,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fa91e23d6feab42933fb3abfab6169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -3
+  speed: 0
+  Xspeed: 0
+--- !u!50 &4420122705383753637
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4464746307471661609}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

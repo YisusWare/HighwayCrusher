@@ -16,6 +16,7 @@ MonoBehaviour:
   carName: Camerino
   carDescription: Magnate Hombre de negocios
   prefab: {fileID: 9002544973150450945, guid: b8158fb912f66b649a058cae99ac077b, type: 3}
-  sprite: {fileID: 1930520036, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
-  price: 320
+  sprite: {fileID: 1970140575, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
+  price: 270
   unlocked: 0
+  canBuyIt: 1

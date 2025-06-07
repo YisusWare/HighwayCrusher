@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class FireBallContainer : PowerUpContainer
 {
-
+    private void Start()
+    {
+        transform.localScale = Vector3.zero;
+        transform.LeanScale(Vector3.one * 0.5f, 0.3f);
+    }
     public override void Activate(PowerUpsStorage storage,GameObject button)
     {
-
-       
+  
         base.Activate(storage,button);
 
         Transform player = FindObjectOfType<PlayerController>().gameObject.transform;
 
         Instantiate(prefab, player.position, Quaternion.identity);
-        var index = button.transform.GetSiblingIndex();
-        
+        var index = button.transform.GetSiblingIndex();    
         storage.DestroyPowerUp(index);
     }
 }

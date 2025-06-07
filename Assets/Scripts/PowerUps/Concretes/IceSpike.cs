@@ -35,10 +35,18 @@ public class IceSpike : AllyProjectile
     public override void HitEnemy()
     {
         base.HitEnemy();
-        Debug.Log("Damage");
+ 
         BreakableObject enemy = enemyCollider.gameObject.GetComponent<BreakableObject>();
 
+        if(enemy != null)
         enemy.TakeDamage(power);
+
+        ScoreIncreaseObject scoreObject = enemyCollider.gameObject.GetComponent<ScoreIncreaseObject>();
+
+        if (scoreObject != null)
+        {
+            scoreObject.OnGetPoints();
+        }
 
         animator.SetTrigger("Destroy");
     }

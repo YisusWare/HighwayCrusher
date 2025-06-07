@@ -17,5 +17,6 @@ MonoBehaviour:
   carDescription: Herbi pero malvado
   prefab: {fileID: 4127650791254731962, guid: 01138a84cd928d0469d387a2ce31d4cc, type: 3}
   sprite: {fileID: -927857056, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
-  price: 270
+  price: 325
   unlocked: 0
+  canBuyIt: 0

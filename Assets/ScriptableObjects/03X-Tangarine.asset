@@ -17,5 +17,6 @@ MonoBehaviour:
   carDescription: naranja poderosa
   prefab: {fileID: 3320257174777825860, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
   sprite: {fileID: 769946946, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
-  price: 370
+  price: 320
   unlocked: 0
+  canBuyIt: 1

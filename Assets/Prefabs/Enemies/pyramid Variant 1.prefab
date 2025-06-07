@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: MaxHealthPoints
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 5211297603700019200, guid: f25a6c43c93159940ac4bc74266d06d3, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 3571926060185798662}
     - target: {fileID: 5611355986408989090, guid: f25a6c43c93159940ac4bc74266d06d3, type: 3}
       propertyPath: m_Size.x
       value: 0.9038949
@@ -113,7 +117,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -471599966, guid: 772069d84f29c134c8523d9223cae4bb, type: 3}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3216678382638343039, guid: f25a6c43c93159940ac4bc74266d06d3, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f25a6c43c93159940ac4bc74266d06d3, type: 3}
+--- !u!114 &3571926060185798662 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8266638460027282704, guid: f25a6c43c93159940ac4bc74266d06d3, type: 3}
+  m_PrefabInstance: {fileID: 4839953643964198166}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9495df94106ba940a096ce45d8cc51c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

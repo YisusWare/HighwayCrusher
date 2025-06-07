@@ -17,5 +17,6 @@ MonoBehaviour:
   carDescription: Nagasaki Mobile
   prefab: {fileID: 6859601340472877437, guid: bb4abc5fd13a4934a86e11250a7a62b3, type: 3}
   sprite: {fileID: 1975958136, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
-  price: 430
+  price: 360
   unlocked: 0
+  canBuyIt: 0

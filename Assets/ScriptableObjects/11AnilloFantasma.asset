@@ -17,5 +17,6 @@ MonoBehaviour:
   carDescription: Anillo fantasma
   prefab: {fileID: 2687295804332515522, guid: cb04c8c5cd16ca44e910938ccc0761d9, type: 3}
   sprite: {fileID: 1082274125, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
-  price: 420
+  price: 380
   unlocked: 0
+  canBuyIt: 0

@@ -13,6 +13,6 @@ public class CollectedCoinsLabel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        coinsLabel.text = string.Concat("Coins: ", GameManager.instance.collectedCoins);
+        coinsLabel.text = string.Concat("X ", GameManager.instance.totalCollectedCoins);
     }
 }

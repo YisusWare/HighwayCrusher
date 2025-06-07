@@ -10,7 +10,7 @@ public class InitializeAds : MonoBehaviour, IUnityAdsInitializationListener
 
     public void OnInitializationComplete()
     {
-        Debug.Log("Ads initialized");
+        
     }
 
     public void OnInitializationFailed(UnityAdsInitializationError error, string message)

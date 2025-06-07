@@ -1,0 +1,425 @@
+fileFormatVersion: 2
+guid: bf9d78d23b3ce3f4e821884af008978d
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: obstalesCementery_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 875
+        width: 80
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6b534255c7b8b46b15559c5fecb420
+      internalID: -1872849029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstalesCementery_1
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 876
+        width: 74
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 468f5474236b12d4780b8f4f8fd72b66
+      internalID: 536218669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstalesCementery_2
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 877
+        width: 74
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca8574fa71f63f45848f2cbd6723ae3
+      internalID: 1470410114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstalesCementery_3
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 873
+        width: 48
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ec999114ac84674ead5630d1ac9d0eb
+      internalID: -1516218568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstalesCementery_4
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 875
+        width: 77
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5b3d570d48aa1d4799193f26584f74f
+      internalID: 2079250788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstalesCementery_5
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 872
+        width: 127
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7903013bae27f584896167a8712bb252
+      internalID: -443541178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstalesCementery_6
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 874
+        width: 110
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c1333a51353df348af54cddfb10c3d1
+      internalID: -1431153366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstalesCementery_7
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 722
+        width: 78
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3c04c945ff4b024486ded27d8e885d4
+      internalID: -1683819750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstalesCementery_22
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 742
+        width: 77
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cb3fa7961ec59b4b90d821ed0d17e1f
+      internalID: 1041418631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstalesCementery_50
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 712
+        width: 120
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b37267ddc523cb4f918d5a8d90aed10
+      internalID: 191446751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstalesCementery_52
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 711
+        width: 135
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3643b8bcb63be7e43971ad2fc167e442
+      internalID: -130898369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      obstalesCementery_0: -1872849029
+      obstalesCementery_1: 536218669
+      obstalesCementery_10: -1186343503
+      obstalesCementery_11: 1861796596
+      obstalesCementery_12: 215242303
+      obstalesCementery_13: -2101410968
+      obstalesCementery_14: 2091346851
+      obstalesCementery_15: 609614214
+      obstalesCementery_16: -1289615573
+      obstalesCementery_17: 691607822
+      obstalesCementery_18: 1307313566
+      obstalesCementery_19: -71507541
+      obstalesCementery_2: 1470410114
+      obstalesCementery_20: 982484538
+      obstalesCementery_21: -1942787509
+      obstalesCementery_22: 1041418631
+      obstalesCementery_23: -106944585
+      obstalesCementery_24: -1974863314
+      obstalesCementery_25: 498250817
+      obstalesCementery_26: -1807934158
+      obstalesCementery_27: 1397063623
+      obstalesCementery_28: 1130709051
+      obstalesCementery_29: 1689172768
+      obstalesCementery_3: -1516218568
+      obstalesCementery_30: 1307649427
+      obstalesCementery_31: 1546579130
+      obstalesCementery_32: -149343352
+      obstalesCementery_33: -1585098574
+      obstalesCementery_34: -1465721463
+      obstalesCementery_35: 2129143791
+      obstalesCementery_36: 1753967060
+      obstalesCementery_37: -1741025612
+      obstalesCementery_38: -1455776822
+      obstalesCementery_39: -399617972
+      obstalesCementery_4: 2079250788
+      obstalesCementery_40: 1734293360
+      obstalesCementery_41: 1415121136
+      obstalesCementery_42: 947173886
+      obstalesCementery_43: 1142637245
+      obstalesCementery_44: -1802514532
+      obstalesCementery_45: -2110310167
+      obstalesCementery_46: -1331098744
+      obstalesCementery_47: -1194238437
+      obstalesCementery_48: 1611781060
+      obstalesCementery_49: -1915873945
+      obstalesCementery_5: -443541178
+      obstalesCementery_50: 191446751
+      obstalesCementery_51: 331932740
+      obstalesCementery_52: -130898369
+      obstalesCementery_53: 226501427
+      obstalesCementery_54: -505075733
+      obstalesCementery_55: 1328185053
+      obstalesCementery_56: -1848170699
+      obstalesCementery_57: -1024585301
+      obstalesCementery_58: -1481856972
+      obstalesCementery_59: 24409453
+      obstalesCementery_6: -1431153366
+      obstalesCementery_60: -2142877538
+      obstalesCementery_61: -890692928
+      obstalesCementery_62: 1230883728
+      obstalesCementery_63: 1982092273
+      obstalesCementery_64: 323235497
+      obstalesCementery_65: 1168864397
+      obstalesCementery_66: -387638389
+      obstalesCementery_7: -1683819750
+      obstalesCementery_8: -1309928800
+      obstalesCementery_9: 475980941
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -45,7 +45,7 @@ public class ShockBallResidual : AllyProjectile
     {
         base.HitEnemy();
         MakeDamage();
-        animator.SetTrigger("Explote");
+        
     }
 
     private void MakeDamage()

@@ -8,7 +8,10 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
+    [SerializeField] LoadingScreens loadingScreenManager;
     public bool isPlayerDead = false;
+
+    public bool specialStage = false;
     
     public PlayableCarModel selectedCar;
     [SerializeField]
@@ -32,8 +35,12 @@ public class GameManager : MonoBehaviour
     }
     public float metersRun;
     public int collectedCoins;
+    public int blueCoins;
+    public int redCoins;
     public int totalCollectedCoins;
     public GameState currentState;
+
+    public int coinsToContinueGame = 10;
     void Awake()
     {
         if(instance != null && instance != this)
@@ -47,6 +54,7 @@ public class GameManager : MonoBehaviour
             SceneManager.sceneLoaded += OnSceneLoaded;
             dataManager.InitializeData();
             SetPlayableCarsStatus();
+            totalCollectedCoins = dataManager.getTotalCoins();
             DontDestroyOnLoad(gameObject);
         }
         
@@ -70,39 +78,58 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+
     public void PauseGame()
     {
         currentState = GameState.gamePaused;
+        Time.timeScale = 0;
     }
 
     public void ResumeGame()
     {
         currentState = GameState.gameScreen;
+        Time.timeScale = 1;
     }
 
     public void ExitGame()
     {
+        Time.timeScale = 1;
+        Debug.Log("Special stage: " + specialStage);
+        if (!specialStage)
+        {
+            SaveCurrentGame();
+        }
+
+        blueCoins = 0;
+        metersRun = 0;
+        collectedCoins = 0;
+        ChangeScene(0);
+    }
+
+    public void SaveCurrentGame()
+    {
+
         PowerUpsStorage powerUpStorage = FindObjectOfType<PowerUpsStorage>();
 
         var powerUps = powerUpStorage.GetPowerUps();
-
         List<int> powerUpIndex = new List<int>();
-        foreach(var powerUp in powerUps)
+        foreach (var powerUp in powerUps)
         {
             powerUpIndex.Add(powerUp.index);
         }
-       
+
+        Debug.Log("Biome: " + savedGame.BiomeIndex);
         savedGame.powerUpIndex = powerUpIndex.ToArray();
-        savedGame.metersRun = (int) metersRun;
+        savedGame.metersRun = (int)metersRun;
         savedGame.carIndex = selectedCar.Id;
         savedGame.SceneIndex = SceneManager.GetActiveScene().buildIndex;
-        int totalCoins = dataManager.getTotalCoins();
-        totalCollectedCoins = totalCoins + collectedCoins;
+        savedGame.health = player.GetHealth();
+        savedGame.blueCoins = blueCoins;
+        savedGame.coinsToContinueGame = coinsToContinueGame;
+
         dataManager.setTotalCoins(totalCollectedCoins);
         dataManager.SaveCurrentGame(savedGame);
-        metersRun = 0;
-        collectedCoins = 0;
-        SceneManager.LoadScene(0);
     }
 
     public void SetPlayableCarsStatus()
@@ -137,12 +164,10 @@ public class GameManager : MonoBehaviour
             
         }
 
-        int totalCoins = dataManager.getTotalCoins();
-        totalCollectedCoins = totalCoins + collectedCoins;
         dataManager.setTotalCoins(totalCollectedCoins);
         dataManager.SaveData();
 
-        if(metersRun > 1000)
+        if(metersRun > 1500 && selectedCar.Id != 0)
         {
             AdsManager.instance.interstitialAds.ShowIntertitalAd();
         }
@@ -155,9 +180,10 @@ public class GameManager : MonoBehaviour
 
         if (!IsAdReward)
         {
-            totalCollectedCoins -= 30;
+            totalCollectedCoins -= coinsToContinueGame;
             dataManager.setTotalCoins(totalCollectedCoins);
             dataManager.SaveData();
+            coinsToContinueGame *= 2;
         }
         
         if(currentState == GameState.gameOverScreen)
@@ -177,24 +203,37 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        
-        player = FindObjectOfType<PlayerController>();
-        if(scene.buildIndex != 0 && player == null)
-        {
-            Instantiate(selectedCar.prefab, new Vector2(0, 0), Quaternion.identity);
-            player = FindObjectOfType<PlayerController>();
-        }
 
-        if(scene.buildIndex == 1)
+        Debug.Log("Scene" + scene.buildIndex);
+
+        if (scene.buildIndex == 1)
         {
             AudioManager.instance.PlayRadio();
+            currentState = GameManager.GameState.gameScreen;
+            
         }
 
         if(scene.buildIndex == 0)
         {
-            AudioManager.instance.PlayTrack(0);
+            AudioManager.instance.PlayMainMenu();
+            AdsManager.instance.bannerAds.ShowBannerAd();
         }
-        
+
+        if(scene.buildIndex > 1)
+        {
+            AudioManager.instance.PauseMusic();
+            GameManager.instance.specialStage = true;
+            GameManager.instance.currentState = GameManager.GameState.gamePaused;
+        }
+
+        player = FindObjectOfType<PlayerController>();
+        if (scene.buildIndex != 0 && player == null)
+        {
+            Instantiate(selectedCar.prefab, new Vector2(0, -2f), Quaternion.identity);
+            player = FindObjectOfType<PlayerController>();
+        }
+
+        loadingScreenManager.HideLoadingScreen();
     }
 
     public void restartGame()
@@ -205,8 +244,8 @@ public class GameManager : MonoBehaviour
         isPlayerDead = false;
         currentState = GameState.gameScreen;
         metersRun = 0;
-        collectedCoins = 0;
         boughtItems = new List<int>();
+        coinsToContinueGame = 10;
     }
 
 
@@ -216,9 +255,9 @@ public class GameManager : MonoBehaviour
         currentState = GameState.mainMenu;
         DeleteSavedGameData();
         //0 is the index of the main menu scene
-        SceneManager.LoadScene(0);
-        metersRun = 0;
-        collectedCoins = 0;
+       
+        ChangeScene(0);
+       
     }
 
     public void DeleteSavedGameData()
@@ -227,8 +266,15 @@ public class GameManager : MonoBehaviour
         savedGame.SceneIndex = 1;
         savedGame.powerUpIndex = new int[0];
         savedGame.metersRun = 0;
+        savedGame.blueCoins = 0;
+        metersRun = 0;
+        coinsToContinueGame = 10;
+
         boughtItems = new List<int>();
+        savedGame.health = 0;
         dataManager.DeleteSavedGameData();
+        coinsToContinueGame = 10;
+        totalCollectedCoins = dataManager.getTotalCoins();
     }
     public void StartSavedGame()
     {
@@ -236,6 +282,9 @@ public class GameManager : MonoBehaviour
         metersRun = savedGame.metersRun;
         selectedCar = dataManager.playableCars[savedGame.carIndex];
         boughtItems = new List<int>();
+        blueCoins = savedGame.blueCoins;
+        coinsToContinueGame = savedGame.coinsToContinueGame;
+        totalCollectedCoins = dataManager.getTotalCoins();
 
     }
 
@@ -287,5 +336,46 @@ public class GameManager : MonoBehaviour
         dataManager.SetSFXVolume(volume);
     }
 
+    public void OnGetCarPlains(int carId)
+    {
+        dataManager.OnGetPlains(carId);
+    }
+
+    public void GetBlueCoin()
+    {
+        blueCoins++;
+        OnGetBlueCoin?.Invoke(blueCoins);
+
+    }
+
+    public int GetSpecialStagesPassed()
+    {
+        return dataManager.GetSpecialStagesPassed();
+    }
+
+    public void ChangeScene(int sceneIndex)
+    {
+        StopAllCoroutines();
+        loadingScreenManager.ChangeScene(sceneIndex);
+    }
+
+    public void DeleteAllSavedGameData()
+    {
+        DeleteSavedGameData();
+        dataManager.DeleteAllSavedGameData();
+    }
+
+    public void PlaySpecialStageMusic()
+    {
+        AudioManager.instance.PlaySpecialStage();
+    }
+
+    public bool IsCarAvailable(int carIndex)
+    {
+        return dataManager.IsCarAvailable(carIndex);
+    }
+
     public event EventHandler OnLoadCarsData;
+    public event Action<int> OnGetBlueCoin;
+    public event EventHandler OnGetAllBlueCoins;
 }

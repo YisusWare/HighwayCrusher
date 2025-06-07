@@ -9,4 +9,7 @@ public class SavedGame
     public int[] powerUpIndex;
     public int metersRun;
     public int carIndex;
+    public int health;
+    public int blueCoins;
+    public int coinsToContinueGame;
 }

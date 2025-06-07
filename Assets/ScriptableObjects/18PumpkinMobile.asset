@@ -17,5 +17,6 @@ MonoBehaviour:
   carDescription: Pumpkin Mobile
   prefab: {fileID: 5342056495229819201, guid: a2fb88c71bdb1fe4f96b0f6eb7db363c, type: 3}
   sprite: {fileID: 1324787441, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
-  price: 230
+  price: 250
   unlocked: 0
+  canBuyIt: 0

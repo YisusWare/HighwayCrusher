@@ -17,5 +17,6 @@ MonoBehaviour:
   carDescription: No batallo para subirlas, si no para bajarlas
   prefab: {fileID: 5985034995664095115, guid: 13ec5dcb222f82a4e9c8d44693f752eb, type: 3}
   sprite: {fileID: 1280359485, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
-  price: 350
+  price: 240
   unlocked: 0
+  canBuyIt: 0

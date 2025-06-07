@@ -19,3 +19,4 @@ MonoBehaviour:
   sprite: {fileID: 1772074441, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
   price: 400
   unlocked: 0
+  canBuyIt: 0

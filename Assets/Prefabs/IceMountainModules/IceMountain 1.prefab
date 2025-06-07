@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 6317914477577164552}
   - component: {fileID: 6227843050012790441}
   - component: {fileID: -6748103925352189026}
+  - component: {fileID: -1638866297621758450}
   m_Layer: 0
   m_Name: IceMountain 1
   m_TagString: Untagged
@@ -66,7 +67,6 @@ Transform:
   - {fileID: 299762848837110273}
   - {fileID: 5589315787042908277}
   - {fileID: 2629939439212645168}
-  - {fileID: 4225759985070501022}
   - {fileID: 17329513507402315}
   - {fileID: 5189493831089190493}
   m_Father: {fileID: 0}
@@ -139,6 +139,33 @@ MonoBehaviour:
   adyacentModules: 
   transitionModule: 1
   speed: -4
+--- !u!50 &-1638866297621758450
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6139028026986330853}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1001 &832061670518391276
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -448,66 +475,4 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2305514039230514911, guid: a5452b3bc0fe388468a22bc4f6768f51, type: 3}
   m_PrefabInstance: {fileID: 5940223538809941674}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &9187896547375242526
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 6317914477577164552}
-    m_Modifications:
-    - target: {fileID: 4982420911165092224, guid: 4f4c1ba018e0a304d994baaffdcb8fe2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.1988015
-      objectReference: {fileID: 0}
-    - target: {fileID: 4982420911165092224, guid: 4f4c1ba018e0a304d994baaffdcb8fe2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.1524506
-      objectReference: {fileID: 0}
-    - target: {fileID: 4982420911165092224, guid: 4f4c1ba018e0a304d994baaffdcb8fe2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4982420911165092224, guid: 4f4c1ba018e0a304d994baaffdcb8fe2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4982420911165092224, guid: 4f4c1ba018e0a304d994baaffdcb8fe2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4982420911165092224, guid: 4f4c1ba018e0a304d994baaffdcb8fe2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4982420911165092224, guid: 4f4c1ba018e0a304d994baaffdcb8fe2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4982420911165092224, guid: 4f4c1ba018e0a304d994baaffdcb8fe2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4982420911165092224, guid: 4f4c1ba018e0a304d994baaffdcb8fe2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4982420911165092224, guid: 4f4c1ba018e0a304d994baaffdcb8fe2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6428154427520320024, guid: 4f4c1ba018e0a304d994baaffdcb8fe2, type: 3}
-      propertyPath: m_Name
-      value: Pine (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4f4c1ba018e0a304d994baaffdcb8fe2, type: 3}
---- !u!4 &4225759985070501022 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4982420911165092224, guid: 4f4c1ba018e0a304d994baaffdcb8fe2, type: 3}
-  m_PrefabInstance: {fileID: 9187896547375242526}
   m_PrefabAsset: {fileID: 0}

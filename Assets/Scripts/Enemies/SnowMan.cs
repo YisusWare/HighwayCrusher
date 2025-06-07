@@ -14,13 +14,17 @@ public class SnowMan : BreakableObject
     LayerMask playerLayer;
     [SerializeField]
     int damage;
+    Rigidbody2D rigidbody;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         player = FindObjectOfType<PlayerController>();
         animator = GetComponent<Animator>();
+        healthBarCanvas = healthBar.gameObject.GetComponent<Canvas>();
+        healthBarCanvas.enabled = false;
         HealthPoints = MaxHealthPoints;
+        rigidbody = GetComponent<Rigidbody2D>();
         
     }
 
@@ -29,6 +33,7 @@ public class SnowMan : BreakableObject
     {
         if (detectPlayer.playerDetected)
         {
+            rigidbody.bodyType = RigidbodyType2D.Dynamic;
             transform.SetParent(null);
             animator.SetBool("ChasePlayer", true);
             transform.position = Vector2.MoveTowards(transform.position, player.gameObject.transform.position, speed * Time.deltaTime);
@@ -55,7 +60,7 @@ public class SnowMan : BreakableObject
 
     private void MakeDamage()
     {
-        Collider2D playerCollider = Physics2D.OverlapCircle(transform.position, 0.4f, playerLayer);
+        Collider2D playerCollider = Physics2D.OverlapCircle(transform.position, 0.6f, playerLayer);
 
         if(playerCollider != null)
         {
@@ -67,6 +72,7 @@ public class SnowMan : BreakableObject
 
     private void Flip()
     {
+        Debug.Log("fliping");
         transform.localScale = new Vector3(transform.localScale.x * -1, 1);
 
         lookingRigth = !lookingRigth;

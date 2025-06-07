@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float Acceleration;
     [SerializeField] public int Power;
 
+    [SerializeField] private GameObject[] blueCoinNumbers;
+    [SerializeField]
+    Joystick joystick;
     private float invincibleTimer = 0;
 
     SpriteRenderer sprite;
@@ -28,8 +31,12 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        joystick = FindObjectOfType<Joystick>();
         rb = GetComponent<Rigidbody2D>();
-        GameManager.instance.currentState = GameManager.GameState.gameScreen;
+
+        GameManager.instance.OnGetBlueCoin += OnGetBlueCoin;
+        
         sprite = GetComponent<SpriteRenderer>();
         Vector3 pointZero = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
         Vector3 topRigthScreen = new Vector3(Screen.width, Screen.height, 0);
@@ -38,16 +45,34 @@ public class PlayerController : MonoBehaviour
         screenBottomEdge = pointZero.y;
         screenTopEdge = topRigthCorner.y;
         screenRigthEdge = topRigthCorner.x;
-        health = maxHealth;
+        SavedGame savedGame = GameManager.instance.dataManager.GetSavedGame();
+        
+        
+        if (savedGame.health != 0)
+        {
+            health = savedGame.health;
+            OnTakeDamage?.Invoke(health);
+        }
+        else
+        {
+            health = maxHealth;
+        }
+        
         animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 moveDirection = moveActionToUse.action.ReadValue<Vector2>();
-        transform.Translate(moveDirection * Acceleration * Time.deltaTime);
-      
+        Vector2 moveDirection = new Vector2(joystick.Horizontal, joystick.Vertical);
+        if(Mathf.Abs(moveDirection.x) > 0.2f || Mathf.Abs(moveDirection.y) > 0.2f)
+        {
+            rb.velocity = moveDirection * speed;
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
 
         float playerHeigth = sprite.bounds.size.y;
 
@@ -71,6 +96,14 @@ public class PlayerController : MonoBehaviour
     {
         invincibleTimer = timer;
         animator.SetBool("Invincible", true);
+    }
+
+    public void vanishPlayer()
+    {
+        Collider2D collider = GetComponent<Collider2D>();
+        collider.enabled = false;
+        animator.SetTrigger("Portal");
+        speed = 0;
     }
 
     
@@ -97,6 +130,10 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    public void GetCarPlains(PlayableCarModel carModel)
+    {
+        OnGetPlains?.Invoke(carModel);
+    }
 
 
     public void GetPowerUp(PowerUpContainer powerUp) 
@@ -110,8 +147,27 @@ public class PlayerController : MonoBehaviour
         OnTakeDamage?.Invoke(health);
     }
 
+    private void OnGetBlueCoin(int coinIndex)
+    {
+        
+        GameObject numberImage = Instantiate(blueCoinNumbers[coinIndex - 1], new Vector2( transform.position.x,transform.position.y + 0.7f), Quaternion.identity);
+        numberImage.transform.SetParent(transform);
+    }
+
+    public int GetHealth()
+    {
+        return health;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.instance.OnGetBlueCoin -= OnGetBlueCoin;
+    }
+
+
     public event EventHandler OnDie;
 
     public event Action<int> OnTakeDamage;
     public event Action<PowerUpContainer> OnGetPowerUp;
+    public event Action<PlayableCarModel> OnGetPlains;
 }

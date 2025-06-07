@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PowerUpsStorage : MonoBehaviour
 {
@@ -25,7 +26,8 @@ public class PowerUpsStorage : MonoBehaviour
         buttons = new List<GameObject>();
         powerUps = new List<PowerUpContainer>();
 
-        if(boughtItems.Count > 0)
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if (boughtItems.Count > 0 && currentSceneIndex == 1 /*escena principal de juego*/ )
         {
             foreach (var powerUp in boughtItems)
             {
@@ -34,7 +36,7 @@ public class PowerUpsStorage : MonoBehaviour
         }
         else
         {
-            if (savedPowerUps.Count > 0)
+            if (savedPowerUps.Count > 0 && currentSceneIndex == 1 /*escena principal de juego*/ )
             {
                 foreach (var powerUp in savedPowerUps)
                 {

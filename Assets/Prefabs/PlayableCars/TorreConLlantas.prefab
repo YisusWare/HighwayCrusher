@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 317706201452446435, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
       propertyPath: Power
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 317706201452446435, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
       propertyPath: speed
@@ -32,6 +32,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -34251125, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
+    - target: {fileID: 2289419602939290266, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
+      propertyPath: m_Mass
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3320257174777825860, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
       propertyPath: m_Name
       value: TorreConLlantas

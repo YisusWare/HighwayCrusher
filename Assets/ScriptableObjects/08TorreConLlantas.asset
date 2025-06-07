@@ -17,5 +17,6 @@ MonoBehaviour:
   carDescription: Medieval
   prefab: {fileID: 5479046599523784447, guid: 074490fb89e3fba4aae88e66fe904a42, type: 3}
   sprite: {fileID: -34251125, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
-  price: 300
+  price: 430
   unlocked: 0
+  canBuyIt: 0

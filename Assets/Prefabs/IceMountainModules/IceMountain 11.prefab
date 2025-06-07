@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 6317914477577164552}
   - component: {fileID: 6227843050012790441}
   - component: {fileID: -6748103925352189026}
+  - component: {fileID: -3518612634256313892}
   m_Layer: 0
   m_Name: IceMountain 11
   m_TagString: Untagged
@@ -139,6 +140,33 @@ MonoBehaviour:
   adyacentModules: 
   transitionModule: 1
   speed: -4
+--- !u!50 &-3518612634256313892
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6139028026986330853}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1001 &133686084404559802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -335,11 +363,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7361611863793767402, guid: 0ae6b16d08589ef4f96d99f85bc79c7c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.6333958
+      value: -0.38
       objectReference: {fileID: 0}
     - target: {fileID: 7361611863793767402, guid: 0ae6b16d08589ef4f96d99f85bc79c7c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6248684
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7361611863793767402, guid: 0ae6b16d08589ef4f96d99f85bc79c7c, type: 3}
       propertyPath: m_LocalPosition.z

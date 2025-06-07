@@ -77,25 +77,29 @@ public class GameDataManager : MonoBehaviour
                 CarId = c.Id,
                 price = c.price,
                 carName = c.carName,
-                unlocked = c.Id <= savedCars - 1 ? gameData.CarsRegistry[c.Id].unlocked : c.unlocked,
-                canBuyIt = c.Id <= savedCars - 1 ? gameData.CarsRegistry[c.Id].canBuyIt : c.canBuyIt
+                unlocked =  c.Id <= savedCars - 1 ? gameData.CarsRegistry[c.Id].unlocked : c.unlocked,
+                canBuyIt = c.Id < 4 ? true : c.Id <= savedCars - 1 ? gameData.CarsRegistry[c.Id].canBuyIt : c.canBuyIt
             }).ToArray();
 
         }
         else
         {
-            
+          
             gameData.CarsRegistry = playableCars.Select(c =>
             new PlayableCarRegistry
             {
                 CarId = c.Id,
                 price = c.price,
                 carName = c.carName,
-                unlocked = c.unlocked
+                unlocked = c.Id < 1 ? true : false,
+                canBuyIt = c.Id <= 3 ? true : false
             }).ToArray();
+
 
             gameData.musicVolume = 0.5f;
             gameData.sfxVolume = 0.5f;
+            gameData.specialStagesPassed = 0;
+            gameData.coinsToContinueGame = 10;
         }
             
 
@@ -110,6 +114,9 @@ public class GameDataManager : MonoBehaviour
         gameData.metersRun = gameToSave.metersRun;
         gameData.carIndex = gameToSave.carIndex;
         gameData.savedGame = true;
+        gameData.health = gameToSave.health;
+        gameData.blueCoins = gameToSave.blueCoins;
+        gameData.coinsToContinueGame = gameToSave.coinsToContinueGame;
 
         SaveData();
     }
@@ -163,6 +170,9 @@ public class GameDataManager : MonoBehaviour
         gameData.powerUpIndex = new int[0];
         gameData.metersRun = 0;
         gameData.carIndex = 0;
+        gameData.health = 0;
+        gameData.blueCoins = 0;
+        gameData.coinsToContinueGame = 10;
 
         SaveData();
     }
@@ -176,6 +186,9 @@ public class GameDataManager : MonoBehaviour
         savedGame.powerUpIndex = gameData.powerUpIndex;
         savedGame.metersRun = gameData.metersRun;
         savedGame.carIndex =  gameData.carIndex;
+        savedGame.health = gameData.health;
+        savedGame.blueCoins = gameData.blueCoins;
+        savedGame.coinsToContinueGame = gameData.coinsToContinueGame;
 
         return savedGame;
     }
@@ -214,5 +227,60 @@ public class GameDataManager : MonoBehaviour
         gameData.sfxVolume = volume;
 
         SaveData();
+    }
+
+    public void OnGetPlains(int carId)
+    {
+        gameData.CarsRegistry[carId].canBuyIt = true;
+        gameData.specialStagesPassed++;
+        SaveData();
+    }
+
+    public int GetSpecialStagesPassed()
+    {
+        return gameData.specialStagesPassed;
+    }
+
+    public void DeleteAllSavedGameData()
+    {
+        gameData.savedGame = false;
+        gameData.SceneIndex = 0;
+        gameData.BiomeIndex = 0;
+        gameData.powerUpIndex = new int[0];
+        gameData.metersRun = 0;
+        gameData.carIndex = 0;
+        gameData.health = 0;
+        gameData.coins = 0;
+        gameData.highScore = 0;
+        gameData.specialStagesPassed = 0;
+        gameData.blueCoins = 0;
+        gameData.coinsToContinueGame = 10;
+
+
+        foreach (PlayableCarRegistry car in gameData.CarsRegistry)
+        {
+
+            if(car.CarId <= 4 && car.CarId > 0)
+            {
+                car.unlocked = false;
+                car.canBuyIt = true;
+            }
+            if (car.CarId > 4)
+            {
+                car.unlocked = false;
+                car.canBuyIt = false;
+                
+            }
+        }
+
+        SaveData();
+    }
+
+
+    public bool IsCarAvailable(int CarId)
+    {
+        PlayableCarRegistry car = gameData.CarsRegistry.Where(c => c.CarId == CarId).FirstOrDefault();
+ 
+        return car.canBuyIt;
     }
 }

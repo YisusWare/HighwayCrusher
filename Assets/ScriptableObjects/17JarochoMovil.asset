@@ -17,5 +17,6 @@ MonoBehaviour:
   carDescription: Jarocho Movil
   prefab: {fileID: 8885196425352568473, guid: 5ed701ba1ae04444f86b5c98c0311f46, type: 3}
   sprite: {fileID: 636165369, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
-  price: 360
+  price: 260
   unlocked: 0
+  canBuyIt: 0

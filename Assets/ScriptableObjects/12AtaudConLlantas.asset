@@ -17,5 +17,6 @@ MonoBehaviour:
   carDescription: "El coche que mi mam\xE1 piensa que me voy a comprar"
   prefab: {fileID: 2396332537502886016, guid: f28b1f460ec859b46a6358f2ea522981, type: 3}
   sprite: {fileID: 860440700, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
-  price: 300
-  unlocked: 0
+  price: 260
+  unlocked: 1
+  canBuyIt: 1

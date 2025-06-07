@@ -17,5 +17,6 @@ MonoBehaviour:
   carDescription: Emo Power Tank
   prefab: {fileID: 1439852543672334337, guid: 243d6cedb9cc8704a8dbef7760cb8e97, type: 3}
   sprite: {fileID: -406987301, guid: c248afb7f19eb9b4fbac27f74c46dab8, type: 3}
-  price: 450
+  price: 420
   unlocked: 0
+  canBuyIt: 0

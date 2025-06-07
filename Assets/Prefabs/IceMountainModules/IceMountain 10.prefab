@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 6317914477577164552}
   - component: {fileID: 6227843050012790441}
   - component: {fileID: -6748103925352189026}
+  - component: {fileID: -6844167612183926811}
   m_Layer: 0
   m_Name: IceMountain 10
   m_TagString: Untagged
@@ -137,6 +138,33 @@ MonoBehaviour:
   adyacentModules: 
   transitionModule: 1
   speed: -4
+--- !u!50 &-6844167612183926811
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6139028026986330853}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1001 &133686084404559802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -151,11 +179,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2305514039230514911, guid: a5452b3bc0fe388468a22bc4f6768f51, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.4426085
+      value: -1.29
       objectReference: {fileID: 0}
     - target: {fileID: 2305514039230514911, guid: a5452b3bc0fe388468a22bc4f6768f51, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.0807385
+      value: -1.95
       objectReference: {fileID: 0}
     - target: {fileID: 2305514039230514911, guid: a5452b3bc0fe388468a22bc4f6768f51, type: 3}
       propertyPath: m_LocalPosition.z
@@ -271,11 +299,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4982420911165092224, guid: 4f4c1ba018e0a304d994baaffdcb8fe2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.03
+      value: 1.93
       objectReference: {fileID: 0}
     - target: {fileID: 4982420911165092224, guid: 4f4c1ba018e0a304d994baaffdcb8fe2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.33
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 4982420911165092224, guid: 4f4c1ba018e0a304d994baaffdcb8fe2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -333,11 +361,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4982420911165092224, guid: 4f4c1ba018e0a304d994baaffdcb8fe2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.72
+      value: -0.59
       objectReference: {fileID: 0}
     - target: {fileID: 4982420911165092224, guid: 4f4c1ba018e0a304d994baaffdcb8fe2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.14
+      value: -0.66
       objectReference: {fileID: 0}
     - target: {fileID: 4982420911165092224, guid: 4f4c1ba018e0a304d994baaffdcb8fe2, type: 3}
       propertyPath: m_LocalPosition.z

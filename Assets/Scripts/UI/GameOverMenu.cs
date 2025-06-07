@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameOverMenu : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class GameOverMenu : MonoBehaviour
     TextMeshProUGUI collectedCoinsText;
     [SerializeField]
     TextMeshProUGUI totalCoinsText;
+
+    [SerializeField]
+    Button continueButton;
+    [SerializeField]
+    TextMeshProUGUI coinsToContinueText;
 
     private void Start()
     {
@@ -35,21 +41,37 @@ public class GameOverMenu : MonoBehaviour
 
     public void ContinueWithCoins()
     {
-        gameOverPanel.transform.LeanScale(Vector2.zero, 0.3f);
+        gameOverPanel.transform.LeanScale(Vector2.zero, 0.3f).setIgnoreTimeScale(true); ;
         GameManager.instance.ContinueGameWithCoins();
     }
 
     public void ContinueWithAd()
     {
-        gameOverPanel.transform.LeanScale(Vector2.zero, 0.3f);
+        
         AdsManager.instance.rewardedAds.ShowRewardedAd();
+    }
+
+    public void HideGameOverPanel()
+    {
+        gameOverPanel.transform.LeanScale(Vector2.zero, 0.3f)
+            .setIgnoreTimeScale(true);
     }
 
     private void SetActive(object sender, EventArgs e)
     {
+        int totalCoins = GameManager.instance.totalCollectedCoins;
+        int coinsToContinue = GameManager.instance.coinsToContinueGame;
+
+        coinsToContinueText.text = string.Concat(coinsToContinue, " x");
         gameOverPanel.transform.LeanScale(Vector2.one, 0.3f);
         highScoreText.text = GameManager.instance.dataManager.getHighScore() + "m";
         collectedCoinsText.text = string.Concat("Collected Coins: ",GameManager.instance.collectedCoins);
-        totalCoinsText.text = string.Concat("Collected Coins: ",GameManager.instance.totalCollectedCoins);
+        totalCoinsText.text = string.Concat("Total Coins: ", totalCoins);
+
+
+        if (totalCoins < coinsToContinue)
+        {
+            continueButton.interactable = false;
+        }
     }
 }

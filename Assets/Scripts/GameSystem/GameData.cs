@@ -12,10 +12,13 @@ public class GameData
     public int[] powerUpIndex;
     public int metersRun;
     public int carIndex;
+    public int health;
     public float musicVolume;
     public float sfxVolume;
     public PlayableCarRegistry[] CarsRegistry;
-    
+    public int specialStagesPassed;
+    public int blueCoins;
+    public int coinsToContinueGame;
 
 }
 

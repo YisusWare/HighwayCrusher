@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 0.62
       objectReference: {fileID: 0}
+    - target: {fileID: 2256880057186740195, guid: 2c1ec04aa97179d428783ed529f1c15b, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 8266638460027282704}
     - target: {fileID: 4839819793423419677, guid: 2c1ec04aa97179d428783ed529f1c15b, type: 3}
       propertyPath: m_Size.x
       value: 1.0762389
@@ -133,3 +137,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c1ec04aa97179d428783ed529f1c15b, type: 3}
+--- !u!114 &8266638460027282704 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2718146789485515507, guid: 2c1ec04aa97179d428783ed529f1c15b, type: 3}
+  m_PrefabInstance: {fileID: 6269067834599749603}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9495df94106ba940a096ce45d8cc51c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
