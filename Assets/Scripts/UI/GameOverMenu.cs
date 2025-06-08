@@ -63,7 +63,7 @@ public class GameOverMenu : MonoBehaviour
         int coinsToContinue = GameManager.instance.coinsToContinueGame;
 
         coinsToContinueText.text = string.Concat(coinsToContinue, " x");
-        gameOverPanel.transform.LeanScale(Vector2.one, 0.3f);
+        gameOverPanel.transform.LeanScale(Vector2.one, 0.3f).setIgnoreTimeScale(true); ;
         highScoreText.text = GameManager.instance.dataManager.getHighScore() + "m";
         collectedCoinsText.text = string.Concat("Collected Coins: ",GameManager.instance.collectedCoins);
         totalCoinsText.text = string.Concat("Total Coins: ", totalCoins);

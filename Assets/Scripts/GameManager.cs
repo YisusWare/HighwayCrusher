@@ -154,6 +154,7 @@ public class GameManager : MonoBehaviour
         isPlayerDead = true;
 
         player.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        
 
         dataManager.LoadData();
         int highScore = dataManager.getHighScore();
@@ -171,11 +172,14 @@ public class GameManager : MonoBehaviour
         {
             AdsManager.instance.interstitialAds.ShowIntertitalAd();
         }
-        
+
+        Time.timeScale = 0;
+
     }
 
     public void ContinueGameWithCoins()
     {
+        Time.timeScale = 1;
         collectedCoins = 0;
 
         if (!IsAdReward)
@@ -238,6 +242,7 @@ public class GameManager : MonoBehaviour
 
     public void restartGame()
     {
+        Time.timeScale = 1;
         int activeScene = SceneManager.GetActiveScene().buildIndex;
         DeleteSavedGameData();
         SceneManager.LoadScene(activeScene);
@@ -252,6 +257,7 @@ public class GameManager : MonoBehaviour
 
     public void mainMenu()
     {
+        Time.timeScale = 1;
         currentState = GameState.mainMenu;
         DeleteSavedGameData();
         //0 is the index of the main menu scene

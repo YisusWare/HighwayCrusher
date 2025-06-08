@@ -108,23 +108,22 @@ public class RoadManager : MonoBehaviour
     {
         while (true)
         {
-            int createEvent = UnityEngine.Random.Range(0, 1000);
-
-            if (createEvent >= 0 && createEvent < 49 && specialEventHappening)
+            int createEvent = UnityEngine.Random.Range(0, 800);
+            Debug.Log(createEvent + "event number");
+            if (createEvent >= 0 && createEvent < 49 && !specialEventHappening)
             {
-                //To do: create a normal event
+                Debug.Log("Avalancha");
+                if(currentBiome.events.Length > 0)
+                {
+                   int eventToRun = UnityEngine.Random.Range(0, currentBiome.events.Length);
 
+                    Instantiate(currentBiome.events[eventToRun], Vector3.zero, Quaternion.identity);
+
+                    specialEventHappening = true;
+                }
             }
 
-            if (createEvent >= 50 && createEvent < 59 && specialEventHappening)
-            {
-                //To do: create a rare event
-            }
-
-            if (createEvent == 60 && specialEventHappening)
-            {
-                //To do: create extremely rare event
-            }
+            
 
 
             yield return new WaitForSeconds(enemyInstanceCadence);
