@@ -75,7 +75,7 @@ public class RoadManager : MonoBehaviour
                 totalModulesSpawned++;
                 int randomNum = UnityEngine.Random.Range(0, 60);
 
-                if (randomNum == 0 && modulesByBiome >= 40)
+                if (randomNum == 0 && modulesByBiome >= 55)
                 {
 
                     modulesByBiome = 0;
@@ -108,11 +108,11 @@ public class RoadManager : MonoBehaviour
     {
         while (true)
         {
-            int createEvent = UnityEngine.Random.Range(0, 800);
-            Debug.Log(createEvent + "event number");
-            if (createEvent >= 0 && createEvent < 49 && !specialEventHappening)
+            int createEvent = UnityEngine.Random.Range(0, 100);
+
+            if (createEvent == 0 && !specialEventHappening && modulesByBiome >= 15)
             {
-                Debug.Log("Avalancha");
+                
                 if(currentBiome.events.Length > 0)
                 {
                    int eventToRun = UnityEngine.Random.Range(0, currentBiome.events.Length);

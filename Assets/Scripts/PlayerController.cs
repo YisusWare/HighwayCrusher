@@ -112,6 +112,7 @@ public class PlayerController : MonoBehaviour
     {
         if(invincibleTimer < 0)
         {
+            invincibleTimer = 0.6f;
             health = Mathf.Clamp(health - damage, 0, maxHealth);
 
             OnTakeDamage?.Invoke(health);

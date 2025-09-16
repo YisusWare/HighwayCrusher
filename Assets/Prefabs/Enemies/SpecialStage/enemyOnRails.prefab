@@ -151,6 +151,7 @@ MonoBehaviour:
   - {fileID: 986286743713030136}
   - {fileID: 7506687759448703132}
   speed: 4
+  smooth: 0.5
 --- !u!50 &3559503448921157346
 Rigidbody2D:
   serializedVersion: 4

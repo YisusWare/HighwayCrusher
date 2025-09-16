@@ -9,7 +9,7 @@ public class BreakableObject : MonoBehaviour
     [SerializeField]
     protected int HealthPoints;
     [SerializeField]
-    protected int MaxHealthPoints;
+    public int MaxHealthPoints;
     protected bool canMakeDamage;
     protected Animator animator;
     [SerializeField]

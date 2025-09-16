@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -145,6 +145,7 @@ MonoBehaviour:
   - {fileID: 1929459545269278345, guid: 0de76ab1f6d26b5418c3bde4877e424c, type: 3}
   - {fileID: 3395934327364641583, guid: 707b2b644bd5036479f5eea2c0496411, type: 3}
   - {fileID: 4747108726273513397, guid: cca4b1f589249c6428924622777b854a, type: 3}
+  joystick: {fileID: 0}
 --- !u!61 &6612349091723882617
 BoxCollider2D:
   m_ObjectHideFlags: 0

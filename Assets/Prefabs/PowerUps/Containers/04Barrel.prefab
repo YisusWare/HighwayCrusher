@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 2073272319, guid: 1c678d16c92786944a761fd0b11f1670, type: 3}
+    - target: {fileID: 3952533361319184941, guid: 1e703fcd33576814ebefee2ed63fc29e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4464746307471661609, guid: 1e703fcd33576814ebefee2ed63fc29e, type: 3}
       propertyPath: m_Name
       value: 04Barrel

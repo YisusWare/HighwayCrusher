@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 317706201452446435, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
+      propertyPath: Power
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 317706201452446435, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
       propertyPath: speed
       value: 4
       objectReference: {fileID: 0}
@@ -18,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 317706201452446435, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
       propertyPath: maxHealth
-      value: 75
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 317706201452446435, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
       propertyPath: Acceleration
@@ -63,6 +67,14 @@ PrefabInstance:
     - target: {fileID: 4773619200169299626, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927131201435208797, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927131201435208797, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 8927131201435208797, guid: d45bb20a927a6a54083ce34630e0c211, type: 3}
       propertyPath: m_LocalPosition.x

@@ -41,13 +41,14 @@ public class FireBallConcrete : AllyProjectile
     public override void HitEnemy()
     {
         base.HitEnemy();
+        Debug.Log("explotando");
         MakeDamage();
         animator.SetTrigger("Explote");
     }
 
     private void MakeDamage()
     {
-        Collider2D[] enemyColliders = Physics2D.OverlapCircleAll(explosionCenter.position, 0.5f,enemyLayer);
+        Collider2D[] enemyColliders = Physics2D.OverlapCircleAll(explosionCenter.position, 0.4f,enemyLayer);
         
         foreach (Collider2D collider in enemyColliders)
         {

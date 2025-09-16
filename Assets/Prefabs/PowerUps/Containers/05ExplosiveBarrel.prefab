@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 05ExplosiveBarrel
       objectReference: {fileID: 0}
+    - target: {fileID: 1378473834001370387, guid: 10e71b089f6afe74f833e171caa5fcbb, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5243058814741618254, guid: 10e71b089f6afe74f833e171caa5fcbb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.023

@@ -8,6 +8,17 @@ public class BasicEnemyBullet : EnemyBaseBullet
     int damage;
     [SerializeField]
     int power;
+    float timer = 0;
+
+    private void Update()
+    {
+        timer += Time.deltaTime;
+
+        if(timer >= 7)
+        {
+            Destroy(this.gameObject);
+        }
+    }
     public override void OnHitTarget(GameObject gameObject)
     {
         base.OnHitTarget(gameObject);
@@ -24,10 +35,10 @@ public class BasicEnemyBullet : EnemyBaseBullet
 
         if(breakableObject != null)
         {
-            Debug.Log("hit enemy");
+            
             if (gameObject == parent)
             {
-                Debug.Log("Hit Parent");
+                
                 return;
             }
             

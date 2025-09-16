@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: -1585960207, guid: 772069d84f29c134c8523d9223cae4bb, type: 3}
     - target: {fileID: 253000354895223400, guid: b20a89be249744445aa129a11eca3bc2, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1124312545316992857, guid: b20a89be249744445aa129a11eca3bc2, type: 3}
       propertyPath: m_SizeDelta.y

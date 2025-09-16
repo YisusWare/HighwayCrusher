@@ -9,12 +9,12 @@ public class Aim360 : MonoBehaviour
     [SerializeField]
     float MaxAngle;
     [SerializeField]
-    float shootingCadence;
+    protected float shootingCadence;
     [SerializeField]
-    Transform shootingPoint;
+    protected Transform shootingPoint;
 
     [SerializeField]
-    GameObject bulletPrefab;
+    protected GameObject bulletPrefab;
 
     Transform playerTransform;
 
@@ -24,18 +24,20 @@ public class Aim360 : MonoBehaviour
 
     [SerializeField]
     float playerDistanceThereshold;
-
+    [SerializeField]
+    float delay;
     Vector3 playerDirection;
-    float shootingTime;
+    protected float shootingTime;
 
     float screenLeftEdge;
     float screenRigthEdge;
     float screenTopEdge;
     float screenBottomEdge;
-    void Start()
+    
+    protected virtual void Start()
     {
         playerTransform = FindObjectOfType<PlayerController>().gameObject.transform;
-        shootingTime = shootingCadence;
+        shootingTime = shootingCadence + delay;
         parent = transform.parent.gameObject;
         Vector3 pointZero = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
         Vector3 topRigthScreen = new Vector3(Screen.width, Screen.height, 0);
@@ -47,7 +49,7 @@ public class Aim360 : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
 
         float playerDistance = Vector2.Distance(transform.position, playerTransform.position);
@@ -86,7 +88,7 @@ public class Aim360 : MonoBehaviour
            
     }
 
-    public void Shoot(Vector3 direction)
+    public virtual void Shoot(Vector3 direction)
     {
         shootingTime = shootingCadence;
         GameObject bulletInstance = Instantiate(bulletPrefab, shootingPoint.position, Quaternion.identity);

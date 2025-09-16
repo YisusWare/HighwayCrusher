@@ -155,9 +155,9 @@ TextureImporter:
       name: snowMan_2
       rect:
         serializedVersion: 2
-        x: 202
+        x: 198
         y: 83
-        width: 95
+        width: 99
         height: 102
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

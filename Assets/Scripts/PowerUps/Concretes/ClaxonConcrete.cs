@@ -20,7 +20,7 @@ public class ClaxonConcrete : MonoBehaviour
 
     private void MakeDamage()
     {
-        Collider2D[] enemyColliders = Physics2D.OverlapCircleAll(transform.position, 2.3f, enemyLayer);
+        Collider2D[] enemyColliders = Physics2D.OverlapCircleAll(transform.position, 1.8f, enemyLayer);
         
         foreach (Collider2D collider in enemyColliders)
         {

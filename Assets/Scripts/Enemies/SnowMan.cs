@@ -73,7 +73,7 @@ public class SnowMan : BreakableObject
     private void Flip()
     {
         Debug.Log("fliping");
-        transform.localScale = new Vector3(transform.localScale.x * -1, 1);
+        transform.localScale = new Vector3(transform.localScale.x * -1, 0.7f);
 
         lookingRigth = !lookingRigth;
     }

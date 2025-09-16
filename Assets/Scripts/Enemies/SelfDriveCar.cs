@@ -63,6 +63,7 @@ public class SelfDriveCar : MonoBehaviour
     float screenRigthEdge;
     float screenTopEdge;
     float screenBottomEdge;
+    bool iAmCurrentEvent;
 
     Rigidbody2D rigidBody;
     void Start()
@@ -74,19 +75,26 @@ public class SelfDriveCar : MonoBehaviour
         }
         RoadManager roadManager = FindObjectOfType<RoadManager>();
 
+        
+
         if (roadManager.specialEventHappening)
         {
-            GameObject substituteInstance = Instantiate(substitute, transform.position, Quaternion.identity);
-
-            Car substituteCar = substituteInstance.GetComponent<Car>();
-            if(substituteCar != null)
+            iAmCurrentEvent = false;
+            
+            if(substitute != null)
             {
+                GameObject substituteInstance = Instantiate(substitute, transform.position, Quaternion.identity);
+
+                Car substituteCar = substituteInstance.GetComponent<Car>();
                 float carSpeed = GetComponent<Car>().speed;
                 substituteCar.speed = carSpeed;
             }
 
             Destroy(this.gameObject);
+            return;
         }
+
+        iAmCurrentEvent = true;
 
         roadManager.specialEventHappening = true;
 
@@ -171,6 +179,11 @@ public class SelfDriveCar : MonoBehaviour
             }
             if (chaseMode)
             {
+
+                if(transform.position.y < -3)
+                {
+                    rigidBody.AddForce(Vector2.up * 10);
+                }
                 if (frontSensor)
                 {
                     if (transform.position.x > 0)
@@ -228,7 +241,7 @@ public class SelfDriveCar : MonoBehaviour
         RoadManager roadManager = FindObjectOfType<RoadManager>();
         if(roadManager != null)
         {
-            if(instance == this)
+            if(iAmCurrentEvent)
             {
                 roadManager.specialEventHappening = false;
                 Debug.Log("destroying camioneta");

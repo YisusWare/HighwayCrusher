@@ -64,7 +64,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.015484214, y: 4.42, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6729612958542326192}
@@ -283,7 +283,7 @@ MonoBehaviour:
   PlayerMask:
     serializedVersion: 2
     m_Bits: 64
-  speed: 4
+  speed: 2
   substitute: {fileID: 8777239919909407010, guid: 74ff2bea87098be499d3ba5006d3689e, type: 3}
 --- !u!1 &1699466152748406557
 GameObject:
@@ -403,7 +403,7 @@ Transform:
   m_GameObject: {fileID: 6463389129107361983}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.354, z: 0}
+  m_LocalPosition: {x: 0, y: 1.961, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -606,6 +606,7 @@ MonoBehaviour:
   shootingPoint: {fileID: 7806969623335057214}
   bulletPrefab: {fileID: 8325798398574976064, guid: ea367f717b6449747a887e57def0f31a, type: 3}
   playerDistanceThereshold: 2.5
+  delay: 0
 --- !u!1001 &3948450940773719441
 PrefabInstance:
   m_ObjectHideFlags: 0
