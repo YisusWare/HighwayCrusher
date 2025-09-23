@@ -15,7 +15,9 @@ public class MultiChildrenEvent : MonoBehaviour
     {
         if(transform.childCount == 0)
         {
-            Destroy(this.gameObject);
+            RoadManager roadManager = FindObjectOfType<RoadManager>();
+            roadManager.specialEventHappening = false;
+            Destroy(gameObject);
         }
     }
 }

@@ -16,6 +16,8 @@ public class MiniDeamon : BreakableObject
     GameObject bulletPrefab;
     [SerializeField]
     Transform shootingPoint;
+    [SerializeField]
+    float delay;
     GameObject parent;
     Transform playerTransform;
     bool shootingFlag = false;
@@ -45,7 +47,7 @@ public class MiniDeamon : BreakableObject
         parent = gameObject;
         playerTransform = FindObjectOfType<PlayerController>().gameObject.transform;
         
-        shootingTime = shootingCadence;
+        shootingTime = shootingCadence + delay;
        
     }
 

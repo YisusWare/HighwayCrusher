@@ -283,7 +283,7 @@ PrefabInstance:
     - target: {fileID: 2256880057186740195, guid: ba98ff508339bd746a3bb4f90378da4d, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100012312883519635}
     - target: {fileID: 4982420911165092224, guid: ba98ff508339bd746a3bb4f90378da4d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.8
@@ -333,6 +333,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba98ff508339bd746a3bb4f90378da4d, type: 3}
+--- !u!114 &2100012312883519635 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2718146789485515507, guid: ba98ff508339bd746a3bb4f90378da4d, type: 3}
+  m_PrefabInstance: {fileID: 4079260745336451680}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9495df94106ba940a096ce45d8cc51c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &9059394597574165472 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4982420911165092224, guid: ba98ff508339bd746a3bb4f90378da4d, type: 3}

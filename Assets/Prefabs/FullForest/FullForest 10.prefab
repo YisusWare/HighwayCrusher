@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3371902824321258888}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.3, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -302,6 +302,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2738358844286979936}
     m_Modifications:
+    - target: {fileID: 107683127647349601, guid: 9ccff8dcb52daab44b2a8e5aea3111e6, type: 3}
+      propertyPath: substitute
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 515224066708296145, guid: 9ccff8dcb52daab44b2a8e5aea3111e6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.18
@@ -342,9 +346,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2761702829286364765, guid: 9ccff8dcb52daab44b2a8e5aea3111e6, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4559308396899806421, guid: 9ccff8dcb52daab44b2a8e5aea3111e6, type: 3}
       propertyPath: m_Name
       value: WoodcutterTruck Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014831062639077454, guid: 9ccff8dcb52daab44b2a8e5aea3111e6, type: 3}
+      propertyPath: speed
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -550,6 +562,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2738358844286979936}
     m_Modifications:
+    - target: {fileID: 373536649008356441, guid: ba98ff508339bd746a3bb4f90378da4d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4982420911165092224, guid: ba98ff508339bd746a3bb4f90378da4d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.29

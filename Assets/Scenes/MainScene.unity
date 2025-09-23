@@ -1811,6 +1811,7 @@ MonoBehaviour:
   - {fileID: 1331653588}
   adyacentBiomes:
   - {fileID: 3518641230229112425, guid: 5b4fd225b08a9a0469adfa9b7d25ea49, type: 3}
+  - {fileID: 3518641230229112425, guid: 03c5c452835055a499692d64ba19ed6c, type: 3}
   events:
   - {fileID: 8570070833825698271, guid: 82f4e2e5840624d4a9c332d8d5665d9e, type: 3}
   - {fileID: 6428474488541367167, guid: 445dcb1269e90b249b3bf4c369fbc115, type: 3}
@@ -2023,8 +2024,7 @@ MonoBehaviour:
   spawnPoints: []
   adyacentBiomes:
   - {fileID: 3905100370691290151, guid: 142d20b6fa4328e47b4d33ef621210fc, type: 3}
-  - {fileID: 3518641230229112425, guid: b525843893ec69642a45516676213f8f, type: 3}
-  - {fileID: 3518641230229112425, guid: b525843893ec69642a45516676213f8f, type: 3}
+  - {fileID: 3518641230229112425, guid: 187d611e9ebe9e9449c1e5f96df7b631, type: 3}
   events:
   - {fileID: 3108893288873093255, guid: 9b13101c79d5581459d587294aa4be3c, type: 3}
   - {fileID: 4687529559043526706, guid: 41ea5d26e937f214fa994d0af0bbb82d, type: 3}
@@ -2527,13 +2527,13 @@ MonoBehaviour:
   - {fileID: 551083473}
   adyacentBiomes:
   - {fileID: 3518641230229112425, guid: f22c096ca5d97ab4d9a8da12c57a2b61, type: 3}
-  - {fileID: 3518641230229112425, guid: 187d611e9ebe9e9449c1e5f96df7b631, type: 3}
   - {fileID: 3518641230229112425, guid: cf65f23a66fa4a543b3738cf84abe789, type: 3}
   events:
   - {fileID: 7360856659296591584, guid: 3e7e159fedaca6843933306988f31df9, type: 3}
   - {fileID: 6428474488541367167, guid: 445dcb1269e90b249b3bf4c369fbc115, type: 3}
   - {fileID: 3108893288873093255, guid: 9b13101c79d5581459d587294aa4be3c, type: 3}
   - {fileID: 4687529559043526706, guid: 41ea5d26e937f214fa994d0af0bbb82d, type: 3}
+  - {fileID: 4678907640886763667, guid: 10173846ed46f4c4a873b43615a333c5, type: 3}
 --- !u!1 &467587197
 GameObject:
   m_ObjectHideFlags: 0
@@ -7320,7 +7320,9 @@ MonoBehaviour:
   spawnPoints: []
   adyacentBiomes:
   - {fileID: 3518641230229112425, guid: 45a9a5765e9f2c8468b402ff2b56516e, type: 3}
-  events: []
+  events:
+  - {fileID: 4678907640886763667, guid: 10173846ed46f4c4a873b43615a333c5, type: 3}
+  - {fileID: 4687529559043526706, guid: 41ea5d26e937f214fa994d0af0bbb82d, type: 3}
 --- !u!1 &1696736194
 GameObject:
   m_ObjectHideFlags: 0
@@ -7721,6 +7723,7 @@ MonoBehaviour:
   spawnPoints: []
   adyacentBiomes:
   - {fileID: 3518641230229112425, guid: c75274887daa89341af0a306648d3bc5, type: 3}
+  - {fileID: 3518641230229112425, guid: 8dba40aeaeca5c84bacbc278e296b60c, type: 3}
   events:
   - {fileID: 8570070833825698271, guid: 82f4e2e5840624d4a9c332d8d5665d9e, type: 3}
   - {fileID: 6428474488541367167, guid: 445dcb1269e90b249b3bf4c369fbc115, type: 3}

@@ -19,6 +19,7 @@ public class RoadManager : MonoBehaviour
     private PlayerController player;
     private float enemyInstanceCadence;
     int modulesByBiome = 0;
+    int modulesSinceEvent = 0;
     int totalModulesSpawned = 0;
     public GameObject[] portals;
     public Queue<int> enemyBuffer;
@@ -72,10 +73,12 @@ public class RoadManager : MonoBehaviour
                 var moduleInfo = currentModule.GetComponent<RoadModule>();
                 moduleInfo.speed = -(player.speed);
                 modulesByBiome++;
+                modulesSinceEvent++;
                 totalModulesSpawned++;
                 int randomNum = UnityEngine.Random.Range(0, 60);
-
-                if (randomNum == 0 && modulesByBiome >= 55)
+                Debug.Log("Modules: " + modulesByBiome);
+                Debug.Log("Modules since Event: " + modulesSinceEvent);
+                if ((randomNum == 0 && modulesByBiome >= 55) || modulesByBiome > 70)
                 {
 
                     modulesByBiome = 0;
@@ -108,11 +111,11 @@ public class RoadManager : MonoBehaviour
     {
         while (true)
         {
-            int createEvent = UnityEngine.Random.Range(0, 100);
+            
 
-            if (createEvent == 0 && !specialEventHappening && modulesByBiome >= 15)
+            if ( !specialEventHappening && modulesSinceEvent >= 85)
             {
-                
+                modulesSinceEvent = 0;
                 if(currentBiome.events.Length > 0)
                 {
                    int eventToRun = UnityEngine.Random.Range(0, currentBiome.events.Length);

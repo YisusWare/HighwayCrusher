@@ -200,7 +200,7 @@ MonoBehaviour:
   healthBar: {fileID: 1692622147535760903}
   damage: 8
   power: 8
-  baseRotationSpeed: 1
+  baseRotationSpeed: 0.5
   litleExplosions: {fileID: 6222458007472480834}
   linearSpeed: 2
 --- !u!1 &6222458007472480834

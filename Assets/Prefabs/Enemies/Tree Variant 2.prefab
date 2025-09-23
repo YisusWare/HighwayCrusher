@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 0.96
       objectReference: {fileID: 0}
+    - target: {fileID: 1224430685736740935, guid: 7b1968141a124aa4b8da47d53585bda9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2109410546494318594, guid: 7b1968141a124aa4b8da47d53585bda9, type: 3}
       propertyPath: m_Name
       value: Tree Variant 2

@@ -134,10 +134,10 @@ TextureImporter:
       name: cars2_1
       rect:
         serializedVersion: 2
-        x: 131
-        y: 951
-        width: 9
-        height: 9
+        x: 128
+        y: 948
+        width: 15
+        height: 15
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

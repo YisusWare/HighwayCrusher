@@ -27,7 +27,10 @@ public class BreakableObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (HealthPoints <= 0)
+        {
+            StartDestroyAnimation();
+        }
     }
 
     public void TakeDamage(int damage)

@@ -94,7 +94,7 @@ public class Bulldozer : BreakableObject
 
             player.takeDamage(damage + (power - player.Power));
 
-            TakeDamage(player.Power);
+            
         }
     }
 
