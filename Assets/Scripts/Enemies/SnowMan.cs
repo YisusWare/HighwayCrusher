@@ -51,28 +51,42 @@ public class SnowMan : BreakableObject
 
             if(secondsToExplote <= 0)
             {
-                MakeDamage();
+                
                 animator.SetTrigger("Explote");
                 detectPlayer.playerDetected = false;
             }
         }
     }
 
-    private void MakeDamage()
+    public void MakeDamage()
     {
-        Collider2D playerCollider = Physics2D.OverlapCircle(transform.position, 0.6f, playerLayer);
+        Collider2D[] enemyColliders = Physics2D.OverlapCircleAll(transform.position, 0.7f);
 
-        if(playerCollider != null)
+        foreach( var collider in enemyColliders)
         {
-            PlayerController player = playerCollider.gameObject.GetComponent<PlayerController>();
-           
-            player.takeDamage(damage - player.Power);
+            PlayerController player = collider.gameObject.GetComponent<PlayerController>();
+
+            if(player != null)
+            {
+                player.takeDamage((int)damage - player.Power);
+
+                continue;
+            }
+
+            BreakableObject breakableObject = collider.gameObject.GetComponent<BreakableObject>();
+
+            if(breakableObject != null && breakableObject != this)
+            {
+                breakableObject.TakeDamage((int)damage);
+            }
+
+
         }
     }
 
     private void Flip()
     {
-        Debug.Log("fliping");
+       
         transform.localScale = new Vector3(transform.localScale.x * -1, 0.7f);
 
         lookingRigth = !lookingRigth;
